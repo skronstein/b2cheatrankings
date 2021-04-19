@@ -1,0 +1,13 @@
+    .container {
+        width: 1280px;
+        background: LightGray;
+        display: grid;
+        grid-template-columns: 635px 635px;
+        grid-template-rows: 500px 400px;
+        grid-gap: 10px;
+    }
+    .subcontainer {
+        background: rgb(230, 243, 255);
+        border-style: solid;
+        border-width: 1px;
+    }
