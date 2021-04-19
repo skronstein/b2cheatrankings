@@ -1,6 +1,7 @@
 <?php
 	$title='Burnout 2 Cheat Records Site';
-   require('images.php')
+   require('images.php');
+   require('hometext.php');
 ?>
 <link rel="stylesheet" type="text/css" href="style.css">
    <head>
@@ -16,10 +17,10 @@
          }
       ?>
       <div class="container">
-         <div class="subcontainer">1</div>
-         <div class="subcontainer">2</div>
-         <div class="subcontainer">3</div>
-         <div class="subcontainer">4</div>
+         <div class="subcontainer"><?php echo $text_welcome; ?></div>
+         <div class="subcontainer"><?php echo $text_scores; ?></div>
+         <div class="subcontainer"><?php echo $internal_links; ?></div>
+         <div class="subcontainer"><?php echo $external_links; ?></div>
       </div>
    </body>
 
