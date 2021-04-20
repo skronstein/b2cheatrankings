@@ -1,6 +1,5 @@
     .container {
         width: 1280px;
-        background: LightGray;
         display: grid;
         grid-template-columns: 635px 635px;
         grid-template-rows: 500px 400px;
@@ -8,10 +7,9 @@
     }
     .container-tracks {
         width: 1280px;
-        background: LightGray;
         display: grid;
         grid-template-columns: 635px 635px;
-        grid-template-rows: 297px 297px 297px;
+        grid-template-rows: 297px 297px 296px;
         grid-gap: 10px;
     }
     .subcontainer {
