@@ -1,7 +1,9 @@
 <?php
 	$title='Burnout 2 Cheat Records Site';
-   require('images.php')
+   require('images.php');
+   include('config/db_connect.php');
 ?>
+
 <link rel="stylesheet" type="text/css" href="style.css">
 <html>
    <head>
