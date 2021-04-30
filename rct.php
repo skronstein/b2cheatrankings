@@ -9,7 +9,7 @@
     <?php
     $rank = 1;
     foreach($scores as $score): ?>
-        <tr style="text-align: center;">
+        <tr>
             <td><?php echo $rank++;?></td>
             <td><?php echo $score['score']; ?></td>
             <td><?php echo $score['player']; ?></td>
