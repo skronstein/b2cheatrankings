@@ -9,7 +9,7 @@
          <div class="subcontainer-tracks">
             <?php echo '<b>Race Crash Total</b><br>';?>
             <table>
-               <?php include('rct.php'); ?>
+               <?php include('records.php'); ?>
             </table>
          </div>
          <div class="subcontainer-tracks"><?php echo 'Big Air'; ?></div>
