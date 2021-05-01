@@ -1,5 +1,6 @@
 <?php
    require('header.php');
+   include('records.php');
 ?>
 
       <div class="container-tracks">
@@ -9,7 +10,7 @@
          <div class="subcontainer-tracks">
             <?php echo '<b>Race Crash Total</b><br>';?>
             <table>
-               <?php include('records.php'); ?>
+               <?php outputRecords("race_crash_totals", "DESC", $conn, $sql_result); ?>
             </table>
          </div>
          <div class="subcontainer-tracks"><?php echo 'Big Air'; ?></div>
@@ -18,3 +19,7 @@
    </body>
 
 </html>
+
+<?php 
+    mysqli_cleanup();
+?>
