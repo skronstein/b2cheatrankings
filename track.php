@@ -24,7 +24,7 @@
          <div class="subcontainer-tracks"><?php echo 'Big Crash'; ?></div>
          <div class="subcontainer-tracks">
             <?php echo '<b>Race Crash Total</b><br>';?>
-            <table style="width: 100%">
+            <table>
                <?php include('rct.php'); ?>
             </table>
          </div>
