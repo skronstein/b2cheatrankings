@@ -4,7 +4,12 @@
 ?>
 
       <div class="container-tracks">
-         <div class="subcontainer-tracks"><?php echo 'Best Lap'; ?></div>
+         <div class="subcontainer-tracks">
+            <b>Best Lap</b>
+            <table>
+              <?php outputRecords("best_laps", "ASC", $conn); ?>
+            </table>
+         </div>
          <div class="subcontainer-tracks"><?php echo 'Total Time'; ?></div>
          <div class="subcontainer-tracks"><?php echo 'Big Crash'; ?></div>
          <div class="subcontainer-tracks">
