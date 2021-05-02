@@ -8,6 +8,7 @@
         grid-template-rows: 500px 400px;
         grid-gap: 10px;
         text-align: left;
+        margin: 10px auto 10px auto;
     }
     .container-tracks {
         width: 1280px;
@@ -15,6 +16,7 @@
         grid-template-columns: 635px 635px;
         grid-template-rows: 297px 297px 296px;
         grid-gap: 10px;
+        margin: 10px auto 10px auto;
     }
     .subcontainer {
         font-size: 16px;
