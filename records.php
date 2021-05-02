@@ -8,7 +8,10 @@
     foreach($scores as $score): ?>
         <tr>
             <td><?php echo $rank++;?></td>
-            <td><?php echo $score['score']; ?></td>
+            <td><?php
+                if($order == "ASC") echo number_format($score['score']/1000,3,".",",");
+                else echo $score['score'];
+            ?></td>
             <td><?php echo $score['player']; ?></td>
             <td><?php echo $score['date_acheived']; ?></td>
             <td><img width=75px src="images/cars/<?php echo $score['car']; ?>.png"></td>
