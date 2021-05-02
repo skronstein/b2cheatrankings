@@ -10,7 +10,7 @@
          <div class="subcontainer-tracks">
             <?php echo '<b>Race Crash Total</b><br>';?>
             <table>
-               <?php outputRecords("race_crash_totals", "DESC", $conn, $sql_result); ?>
+               <?php outputRecords("race_crash_totals", "DESC", $conn); ?>
             </table>
          </div>
          <div class="subcontainer-tracks"><?php echo 'Big Air'; ?></div>

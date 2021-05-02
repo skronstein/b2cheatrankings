@@ -1,9 +1,9 @@
 <?php
-    function outputRecords($category, $order, $conn, $sql_result) {
-        $sql_command = 'SELECT score, car, player, system, proof, datetime_entered, date_acheived FROM race_crash_totals ORDER BY score DESC';
-        GLOBAL $sql_result = mysqli_query($conn, $sql_command);
+    include("config/db_connect.php");
+    function outputRecords($category, $order, $conn) {
+        $sql_command = "SELECT score, car, player, system, proof, datetime_entered, date_acheived FROM $category ORDER BY score $order";
+        $sql_result = mysqli_query($conn, $sql_command);
         $scores = mysqli_fetch_all($sql_result, MYSQLI_ASSOC);
-        /*
     $rank = 1;
     foreach($scores as $score): ?>
         <tr>
@@ -16,11 +16,11 @@
             <td><a href="<?php echo $score['proof']; ?>"><img src="images/logos/youtube2.png"></a></td>
         </tr>
     <?php endforeach; ?>
-    */
+<?php
+    mysqli_free_result($sql_result);
+    mysqli_close($conn);
     }
 
     function mysqli_cleanup() {
-        mysqli_free_result($sql_result);
-        mysqli_close($conn);
     }
 ?>
