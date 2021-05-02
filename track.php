@@ -10,7 +10,12 @@
               <?php outputRecords("best_laps", "ASC", $conn); ?>
             </table>
          </div>
-         <div class="subcontainer-tracks"><?php echo 'Total Time'; ?></div>
+         <div class="subcontainer-tracks">
+         <b>Total Race Times</b>
+            <table>
+              <?php outputRecords("total_times", "ASC", $conn); ?>
+            </table>
+         </div>
          <div class="subcontainer-tracks"><?php echo 'Big Crash'; ?></div>
          <div class="subcontainer-tracks">
             <?php echo '<b>Race Crash Total</b><br>';?>
