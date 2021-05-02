@@ -18,7 +18,6 @@
     <?php endforeach; ?>
 <?php
     mysqli_free_result($sql_result);
-    mysqli_close($conn);
     }
 
     function mysqli_cleanup() {

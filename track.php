@@ -26,5 +26,5 @@
 </html>
 
 <?php 
-    mysqli_cleanup();
+    mysqli_close($conn);
 ?>
