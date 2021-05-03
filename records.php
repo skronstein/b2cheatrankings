@@ -5,7 +5,6 @@
         $sql_result = mysqli_query($conn, $sql_command);
         $scores = mysqli_fetch_all($sql_result, MYSQLI_ASSOC);
     $rank = 1;
-    echo "scores count: " . count($scores);
     if(count($scores) == 0) echo "No Records";
     foreach($scores as $score): ?>
         <tr>
