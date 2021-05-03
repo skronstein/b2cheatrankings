@@ -16,7 +16,12 @@
               <?php outputRecords("total_times", "ASC", $conn); ?>
             </table>
          </div>
-         <div class="subcontainer-tracks"><?php echo 'Big Crash'; ?></div>
+         <div class="subcontainer-tracks">
+            <?php echo '<b>Big Crash</b><br>';?>
+            <table>
+               <?php outputRecords("big_crashes", "DESC", $conn); ?>
+            </table>
+         </div>
          <div class="subcontainer-tracks">
             <?php echo '<b>Race Crash Total</b><br>';?>
             <table>
