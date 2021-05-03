@@ -17,7 +17,7 @@
                     $seconds = $seconds - $minutes * 60;
                     echo number_format($seconds,3,".",",");
                 }
-                else { echo $score['score']; } 
+                else { echo number_format($score['score'], 0,".",","); }
             ?></td>
             <td><?php echo $score['player']; ?></td>
             <td><?php echo $score['date_acheived']; ?></td>
