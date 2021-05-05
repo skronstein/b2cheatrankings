@@ -11,7 +11,7 @@
             </table>
          </div>
          <div class="subcontainer-tracks">
-         <b>Total Race Time</b><br>
+            <b>Total Race Time</b><br>
             <table>
               <?php outputRecords("total_times", "ASC", $conn); ?>
             </table>
