@@ -17,13 +17,13 @@
             </table>
          </div>
          <div class="subcontainer-tracks">
-            <?php echo '<b>Big Crash</b><br>';?>
+            <b>Big Crash</b><br>
             <table>
                <?php outputRecords("big_crashes", "DESC", $conn); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
-            <?php echo '<b>Race Crash Total</b><br>';?>
+            <b>Race Crash Total</b><br>
             <table>
                <?php outputRecords("race_crash_totals", "DESC", $conn); ?>
             </table>
