@@ -31,13 +31,13 @@
          <div class="subcontainer-tracks">
             <b>Big Air</b><br>
             <table>
-              <?php outputRecords("big_airs", "ASC", $conn); ?>
+              <?php outputRecords("big_airs", "DESC", $conn); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
             <b>Most Cars in Crash</b><br>
             <table>
-              <?php outputRecords("most_cars_in_crashes", "ASC", $conn); ?>
+              <?php outputRecords("most_cars_in_crashes", "DESC", $conn); ?>
             </table>
          </div>
       </div>
