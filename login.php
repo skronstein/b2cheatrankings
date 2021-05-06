@@ -10,6 +10,7 @@ if(isset($_SESSION['isLoggedIn'])) {
     <input type="password" name="password">
     <input type="submit">
 </form>
+<script>document.getElementById('username').focus()</script>
 
 THEFORM;
 
