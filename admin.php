@@ -21,7 +21,7 @@
                     <p>Player</p>
                     <input type="text" name="player">
                     <p>track</p>
-                    <input type="text" name="track">
+                    <input type="number" name="track">
                     <p>system</p>
                     <input type="text" name="system">
                     <p>proof</p>

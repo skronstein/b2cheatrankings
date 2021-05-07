@@ -1,7 +1,7 @@
 <?php
     include("config/db_connect.php");
-    function outputRecords($category, $order, $conn) {
-        $sql_command = "SELECT score, car, player, system, proof, datetime_entered, date_acheived FROM $category ORDER BY score $order";
+    function outputRecords($category, $order, $conn, $track) {
+        $sql_command = "SELECT score, car, player, system, proof, datetime_entered, date_acheived FROM $category WHERE track_id = $track ORDER BY score $order";
         $sql_result = mysqli_query($conn, $sql_command);
         $scores = mysqli_fetch_all($sql_result, MYSQLI_ASSOC);
         $rank = 1;

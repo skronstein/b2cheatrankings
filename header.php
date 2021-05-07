@@ -12,8 +12,10 @@
    	<h1><?php echo $title;?></h1>
       <?php // track icons to select track
          $arraylength = 15;
-         for($itr=0 ; $itr < $arraylength ; $itr++){
-            $imageName = $imageArray[$itr] . ".png";
+         for($itr=1 ; $itr < $arraylength ; $itr++){
+            echo "<a href = track.php?track=$itr>";
+            $imageName = $imageArray[$itr-1] . ".png";
             echo "<img src = images/" . $imageName . ">";
+            echo "</a>";
          }
       ?>
