@@ -15,5 +15,6 @@ if(isset($_SESSION['isLoggedIn'])) {
 THEFORM;
 
     echo $loginForm;
+    if(isset($_GET['badCredentials'])) echo "Incorrect username or password.";
 }
 ?>

@@ -14,5 +14,5 @@ if(md5($password) == $user['password_hash']){
     $_SESSION['isLoggedIn']=true;
     header('Location: admin.php');
 } else {
-    header('Location: login.php');
+    header('Location: login.php?badCredentials=true');
 }
