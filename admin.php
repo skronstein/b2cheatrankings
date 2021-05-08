@@ -10,7 +10,8 @@
             </head>
             <body>
                 <h1><?php echo $title;?></h1>
-                <b>Add a Record</b>
+                <?php echo '<a href="logout.php">Logout</a><br>';?>
+                <h2>Add a Record</h2>
                 <form method="post" action="admin-response.php">
                     <p>Category - choices:<br> lap race bc rct air mcic</p>
                     <input type="text" name="category">

@@ -1,6 +1,7 @@
 <?php
+session_start();
 if(isset($_SESSION['isLoggedIn'])) {
-    echo "Already logged in";
+    echo '<a href="logout.php">Logout</a>';
 } else {
     $loginForm = <<<THEFORM
 
