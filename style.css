@@ -29,3 +29,11 @@ body {
 table {
     width: 100%;
 }
+.trackinfo {
+    width: 1200px;
+    margin: 10px auto 10px auto;
+    display: flex;
+}
+h1 {
+    margin: auto 10px auto 10px;
+}

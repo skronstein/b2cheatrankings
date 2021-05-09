@@ -1,9 +1,21 @@
 <?php
    require('header.php');
    include('records.php');
+   include("config/db_connect.php");
    $track = $_GET['track'];
 ?>
-
+<br>
+<div class="trackinfo">
+   <div>
+      <img src="images/tracks-large/<?php echo $imageArray[$track-1]?>.png" alt="">
+   </div>
+   <div class="tracktext"><h1><?php
+      $sql_command = "SELECT name FROM tracks WHERE id = $track";
+      $sql_result = mysqli_query($conn, $sql_command);
+      $trackName = mysqli_fetch_all($sql_result, MYSQLI_ASSOC);
+      echo $trackName[0]['name'];
+   ?></h1></div>
+</div>
       <div class="container-tracks">
          <div class="subcontainer-tracks">
             <b>Best Lap</b><br>
