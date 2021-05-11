@@ -5,6 +5,10 @@
    $track = $_GET['track'];
 ?>
 <br>
+   <?php if(!$conn){
+          echo "<h1>Could not connect to database.</h1>";
+          return;
+      }?>
 <div class="trackinfo">
    <div>
       <img src="images/tracks-large/<?php echo $imageArray[$track-1]?>.png" alt="">
