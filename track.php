@@ -19,6 +19,14 @@
       $trackName = mysqli_fetch_all($sql_result, MYSQLI_ASSOC);
       echo $trackName[0]['name'];
    ?></h1></div>
+   <div>
+      <div class="cssgrid">
+         <div><button>Traffic</button></div>
+         <div><button>Direction</button></div>
+         <div><button>Out of Bounds</button></div>
+         <div><button>Codes</button></div>
+      </div>
+   </div>
 </div>
       <div class="container-tracks">
          <div class="subcontainer-tracks">

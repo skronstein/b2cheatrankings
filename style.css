@@ -37,3 +37,12 @@ table {
 h1 {
     margin: auto 10px auto 10px;
 }
+.cssgrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 500px;
+}
+button {
+    width: 90%;
+    height: 90%;
+}
