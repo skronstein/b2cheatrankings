@@ -21,10 +21,10 @@
    ?></h1></div>
    <div>
       <div class="cssgrid">
-         <div><button>Traffic</button></div>
-         <div><button>Direction</button></div>
-         <div><button>Out of Bounds</button></div>
-         <div><button>Codes</button></div>
+         <div><button class="btn btn-lg btn-primary">Traffic</button></div>
+         <div><button class="btn btn-lg btn-primary">Direction</button></div>
+         <div><button class="btn btn-lg btn-primary">Out of Bounds</button></div>
+         <div><button class="btn btn-lg btn-primary">Codes</button></div>
       </div>
    </div>
 </div>

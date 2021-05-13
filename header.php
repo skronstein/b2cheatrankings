@@ -3,6 +3,7 @@
    require('images.php');
    include('config/db_connect.php');
 ?>
+<link rel="stylesheet" type="text/css" href="bootstrap-darkly.min.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 <html>
    <head>
