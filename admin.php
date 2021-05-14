@@ -17,6 +17,8 @@
                     <input type="text" name="category">
                     <p>Score</p>
                     <input type="text" name="score">
+                    <p>Reverse</p>
+                    <input type="checkbox" name="reverse">
                     <p>Car</p>
                     <input type="text" name="car">
                     <p>Player</p>
