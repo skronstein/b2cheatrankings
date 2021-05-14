@@ -12,7 +12,7 @@
         if(count($scores) == 0) echo "<br>No Records";
         foreach($scores as $score): ?>
             <tr>
-                <td><?php echo $rank++;?></td>
+                <td><img src="images/medals/<?php echo $rank++;?>.png"></td>
                 <td><?php
                     if($order == "ASC") { // we are outputting a race time
                         $seconds = $score['score'] / 1000;
