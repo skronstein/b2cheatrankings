@@ -9,7 +9,7 @@
         $sql_result = mysqli_query($conn, $sql_command);
         $scores = mysqli_fetch_all($sql_result, MYSQLI_ASSOC);
         $rank = 1;
-        if(count($scores) == 0) echo "<br>No Records";
+        if(count($scores) == 0) echo "<tr><td>No Records</td></tr>";
         foreach($scores as $score): ?>
             <tr>
                 <td><img src="images/medals/<?php echo $rank++;?>.png"></td>
