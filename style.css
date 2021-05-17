@@ -32,17 +32,23 @@ table {
     margin-top: 10px;
 }
 .trackinfo {
-    width: 1200px;
+    width: 1150px;
     margin: 10px auto 10px auto;
     display: flex;
+}
+.tracktext {
+    width: 700px;
+}
+.trackfilters {
+    width: 100%;
+    text-align: right;
 }
 h1 {
     margin: auto 10px auto 10px;
 }
-.cssgrid {
+.filtergrid {
     display: grid;
     grid-template-columns: 50% 50%;
-    width: 500px;
 }
 button {
     width: 90%;

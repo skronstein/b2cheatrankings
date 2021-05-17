@@ -42,8 +42,8 @@
       $trackName = mysqli_fetch_all($sql_result, MYSQLI_ASSOC);
       echo $trackName[0]['name'];
    ?></h1></div>
-   <div>
-      <div class="cssgrid">
+   <div class="trackfilters">
+      <div class="filtergrid">
          <div><button class="btn btn-lg btn-primary">Traffic</button></div>
          <div><button class="btn btn-lg btn-primary" id="direction" onClick='updateHalf()'>Direction: Forward</button></div>
          <div><button class="btn btn-lg btn-primary">Out of Bounds</button></div>
