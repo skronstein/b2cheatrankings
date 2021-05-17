@@ -17,8 +17,11 @@
                     if($order == "ASC") { // we are outputting a race time
                         $seconds = $score['score'] / 1000;
                         $minutes = floor($seconds / 60);
-                        if($minutes > 0) echo $minutes . ":";
                         $seconds = $seconds - $minutes * 60;
+                        if($minutes > 0) {
+                            echo $minutes . ":";
+                            if($seconds < 10) echo "0";
+                        }
                         echo number_format($seconds,3,".",",");
                     }
                     else { echo number_format($score['score'], 0,".",","); }
