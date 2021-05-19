@@ -10,7 +10,7 @@ if($_POST['reverse'] == 'on') $reverse = 1;
 if($_POST['reverse'] == 'off') $reverse = 0;
 $car = $_POST['car'];
 $player = $_POST['player'];
-$track = $_POST['track'];
+$track = $_POST['track'] + 1;
 $system = $_POST['system'];
 $proof = $_POST['proof'];
 $date_acheived = $_POST['date_acheived'];

@@ -3,6 +3,10 @@
     $title='B2CR admin';
     if(isset($_SESSION['isLoggedIn'])) {
         include('config/db_connect.php');
+
+        $sql_command = "SELECT id, name FROM tracks";
+        $sql_result = mysqli_query($conn, $sql_command);
+        $tracks = mysqli_fetch_all($sql_result, MYSQLI_ASSOC);
 ?>
         <html>
             <head>
@@ -24,7 +28,11 @@
                     <p>Player</p>
                     <input type="text" name="player">
                     <p>track</p>
-                    <input type="number" name="track">
+                    <select name="track" id="track"><?php
+                        for($itr = 0; $itr < 15; $itr++) {
+                            echo "<option value=\"$itr\">" . $tracks[$itr]['name'] . " </option>";
+                        }
+                    ?></select>
                     <p>system</p>
                     <input type="text" name="system">
                     <p>proof</p>
