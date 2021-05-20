@@ -6,8 +6,8 @@ if(!isset($_SESSION['isLoggedIn'])) header('Location: login.php');
 if($_POST['category'] == 'lap') $category = 'best_laps';
 
 $score = $_POST['score'];
-if($_POST['reverse'] == 'on') $reverse = 1;
-if($_POST['reverse'] == 'off') $reverse = 0;
+if(isset($_POST['reverse']) && $_POST['reverse'] == 'on') $reverse = 1;
+else $reverse = 0;
 $car = $_POST['car'];
 $player = $_POST['player'];
 $track = $_POST['track'] + 1;
