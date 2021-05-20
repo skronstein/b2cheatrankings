@@ -4,6 +4,12 @@ session_start();
 if(!isset($_SESSION['isLoggedIn'])) header('Location: login.php');
 
 if($_POST['category'] == 'lap') $category = 'best_laps';
+if($_POST['category'] == 'trt') $category = 'total_times';
+if($_POST['category'] == 'race') $category = 'total_times';
+if($_POST['category'] == 'bc') $category = 'big_crash';
+if($_POST['category'] == 'rct') $category = 'race_crash_totals';
+if($_POST['category'] == 'air') $category = 'big_airs';
+if($_POST['category'] == 'mcic') $category = 'most_cars_in_crashes';
 
 $score = $_POST['score'];
 if(isset($_POST['reverse']) && $_POST['reverse'] == 'on') $reverse = 1;

@@ -17,7 +17,7 @@
                 <?php echo '<a href="logout.php">Logout</a><br>';?>
                 <h2>Add a Record</h2>
                 <form method="post" action="admin-response.php">
-                    <p>Category - choices:<br> lap race bc rct air mcic</p>
+                    <p>Category - choices:<br> lap trt/race bc rct air mcic</p>
                     <input type="text" name="category">
                     <p>Score</p>
                     <input type="text" name="score">
