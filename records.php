@@ -27,7 +27,10 @@
                     else { echo number_format($score['score'], 0,".",","); }
                 ?></td>
                 <td><?php echo $score['player']; ?></td>
-                <td><?php echo $score['date_acheived']; ?></td>
+                <td><?php
+                    $unixtime = strtotime($score['date_acheived']);
+                    echo date("F j, Y", $unixtime);
+                ?></td>
                 <td><img width=75px src="images/cars/<?php echo $score['car']; ?>.png"></td>
                 <td><?php echo $score['system']; ?></td>
                 <td><a href="<?php echo $score['proof']; ?>"><img src="images/logos/youtube2.png"></a></td>
