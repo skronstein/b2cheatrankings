@@ -3,7 +3,7 @@ include("config/db_connect.php");
 include('records.php');
 
 $category=$_GET['category'];
-if($category == 'best_laps' || $category == 'total_race_times') $order = "ASC";
+if($category == 'best_laps' || $category == 'total_times') $order = "ASC";
 else $order = "DESC";
 
 $track=$_GET['track'];
