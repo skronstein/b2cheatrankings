@@ -10,43 +10,10 @@
           echo "<h1>Could not connect to database.</h1>";
           return;
       }?>
-<script>
-   reverse = false;
-   thestring = '';
-   function updateHalf() {
-      reverse = !reverse;
-      if(reverse) {
-         document.getElementById('direction').innerHTML = "Direction: Reverse";
-      }
-      else {
-         document.getElementById('direction').innerHTML = "Direction: Forward";
-      }
 
-      thestring = "records-filter.php?track=<?php echo $track?>";
-      thestring += "&reverse=" + reverse;
-      console.log(thestring);
+<script>thestring_base = "records-filter.php?track=<?php echo $track?>";</script>
+<script src="track.js"></script>
 
-      ajaxFunction("best_laps");
-      ajaxFunction("total_times");
-      ajaxFunction("big_airs");
-   }
-   function updateAll() {
-      updateHalf();
-      ajaxFunction("big_crashes");
-      ajaxFunction("race_crash_totals");
-      ajaxFunction("most_cars_in_crashes");
-   }
-   function ajaxFunction(category) {
-      var ajax = new XMLHttpRequest();
-      ajax.open("GET", thestring + "&category=" + category, true);
-      ajax.send();
-      ajax.onreadystatechange = function() {
-         if(/* this.readystate == 4 && */ this.status == 200) {
-            document.getElementById(category).innerHTML = this.responseText;
-         }
-      }
-   }
-</script>
 <div class="trackinfo">
    <div>
       <img src="images/tracks-large/<?php echo $imageArray[$track-1]?>.png" alt="">
