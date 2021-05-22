@@ -10,7 +10,11 @@
       <title><?php echo $title;?></title>
    </head>
    <body>
-   	<h1><?php echo $title;?></h1>
+      <div class="topbar">
+         <div class="topleft"><a href="home.php">Home</a></div>
+   	   <div class="topcenter"><h1><?php echo $title;?></h1></div>
+         <div class="topright"></div>
+      </div>
       <?php // track icons to select track
          $arraylength = 15;
          for($itr=1 ; $itr <= $arraylength ; $itr++){

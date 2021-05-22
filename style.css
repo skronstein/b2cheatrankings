@@ -67,3 +67,18 @@ button {
     margin-left: auto;
     margin-right: auto;
 }
+.topbar{
+    display: flex;
+    width: 1280px;
+    margin: 10px auto 10px auto;
+}
+.topleft {
+    width: 150px;
+    font-size: 26px;
+}
+.topcenter {
+    width: 870px;
+}
+.topright {
+    width: 150px;
+}
