@@ -5,18 +5,15 @@ body {
     width: 1280px;
     display: grid;
     grid-template-columns: 635px 635px;
-    grid-template-rows: 500px 400px;
     grid-gap: 10px;
-    text-align: left;
     margin: 10px auto 10px auto;
 }
+.container-home {
+    grid-template-rows: 500px 400px;
+    text-align: left;
+}
 .container-tracks {
-    width: 1280px;
-    display: grid;
-    grid-template-columns: 635px 635px;
     grid-template-rows: 297px 297px 296px;
-    grid-gap: 10px;
-    margin: 10px auto 10px auto;
 }
 .subcontainer {
     font-size: 16px;

@@ -33,7 +33,7 @@
       </div>
    </div>
 </div>
-      <div class="container-tracks">
+      <div class="container container-tracks">
          <div class="subcontainer-tracks">
             <b>Best Lap</b><br>
             <table id="best_laps">

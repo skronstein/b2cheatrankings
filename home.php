@@ -2,7 +2,7 @@
    require('header.php');
    require('hometext.php');
 ?>
-      <div class="container">
+      <div class="container container-home">
          <div class="subcontainer"><?php echo $text_welcome; ?></div>
          <div class="subcontainer"><?php echo $text_scores; ?></div>
          <div class="subcontainer"><?php echo $internal_links; ?></div>
