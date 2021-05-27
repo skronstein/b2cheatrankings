@@ -1,7 +1,6 @@
 <?php
 include("config/db_connect.php");
-session_start();
-if(!isset($_SESSION['isLoggedIn'])) header('Location: login.php');
+require("protect.php");
 
 if($_POST['category'] == 'lap') $category = 'best_laps';
 if($_POST['category'] == 'trt') $category = 'total_times';

@@ -10,8 +10,7 @@
         <h1>View Records</h1>
 
         <?php
-            session_start();
-            if(!isset($_SESSION['isLoggedIn'])) return;
+            require("protect.php");
             include('config/db_connect.php');
             if ($result = $conn->query("SELECT * FROM best_laps ORDER BY id")){
                 if($result->num_rows > 0)

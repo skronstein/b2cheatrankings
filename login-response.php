@@ -1,6 +1,6 @@
 <?php
 include("config/db_connect.php");
-session_start();
+require("protect.php");
 
 $userName = trim($_POST["userName"]);
 $password = $_POST["password"];

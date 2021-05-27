@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    require("protect.php");
     $title='B2CR admin';
     if(isset($_SESSION['isLoggedIn'])) {
         include('config/db_connect.php');
