@@ -10,15 +10,15 @@ if($_POST['category'] == 'rct') $category = 'race_crash_totals';
 if($_POST['category'] == 'air') $category = 'big_airs';
 if($_POST['category'] == 'mcic') $category = 'most_cars_in_crashes';
 
-$score = $_POST['score'];
-if(isset($_POST['reverse']) && $_POST['reverse'] == 'on') $reverse = 1;
+$score = htmlentities($_POST['score'], ENT_QUOTES);
+if(isset($_POST['reverse']) && htmlentities($_POST['reverse']) == 'on') $reverse = 1;
 else $reverse = 0;
-$car = $_POST['car'];
-$player = $_POST['player'];
-$track = $_POST['track'] + 1;
-$system = $_POST['system'];
-$proof = $_POST['proof'];
-$date_acheived = $_POST['date_acheived'];
+$car = htmlentities($_POST['car'], ENT_QUOTES);
+$player = htmlentities($_POST['player'], ENT_QUOTES);
+$track = htmlentities($_POST['track'] + 1, ENT_QUOTES);
+$system = htmlentities($_POST['system'], ENT_QUOTES);
+$proof = htmlentities($_POST['proof'], ENT_QUOTES);
+$date_acheived = htmlentities($_POST['date_acheived'], ENT_QUOTES);
 
 $sql_command = "INSERT INTO `$category` (`id`, `score`, `reverse`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`) VALUES (NULL, '$score', $reverse, '$car', '$player', '$system', '$proof', current_timestamp(), '$date_acheived', '$track')";
 echo $sql_command;
