@@ -26,7 +26,7 @@
                         echo "<td>" . $row->player . "</td>";
                         echo "<td>" . $row->track_id . "</td>";
                         echo "<td>" . $row->system . "</td>";
-                        echo "<td><a href='edit.php?id=$row->id'>" . "Edit" . "</td>";
+                        echo "<td><a href='admin.php?id=$row->id'>" . "Edit" . "</td>";
                         echo "<td><a href='delete.php?id=$row->id'>" . "Delete" . "</td>";
                         echo "</tr>";
                     }
