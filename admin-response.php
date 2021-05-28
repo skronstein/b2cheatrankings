@@ -23,3 +23,6 @@ $date_acheived = htmlentities($_POST['date_acheived'], ENT_QUOTES);
 $sql_command = "INSERT INTO `$category` (`id`, `score`, `reverse`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`) VALUES (NULL, '$score', $reverse, '$car', '$player', '$system', '$proof', current_timestamp(), '$date_acheived', '$track')";
 echo $sql_command;
 $sql_result = mysqli_query($conn, $sql_command);
+
+if($category == '') echo "<br>Error: category is empty";
+if($score == '') echo "<br>Error: score is empty";
