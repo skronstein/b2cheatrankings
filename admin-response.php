@@ -11,7 +11,7 @@ if($_POST['category'] == 'air') $category = 'big_airs';
 if($_POST['category'] == 'mcic') $category = 'most_cars_in_crashes';
 
 $score = htmlentities($_POST['score'], ENT_QUOTES);
-if(isset($_POST['reverse']) && htmlentities($_POST['reverse']) == 'on') $reverse = 1;
+if(isset($_POST['reverse']) && htmlentities($_POST['reverse'], ENT_QUOTES) == 'on') $reverse = 1;
 else $reverse = 0;
 $car = htmlentities($_POST['car'], ENT_QUOTES);
 $player = htmlentities($_POST['player'], ENT_QUOTES);
