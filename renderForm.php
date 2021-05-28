@@ -32,7 +32,7 @@
                 <?php if($error != '') {
                     echo "<div style='padding: 4px; border: 1px solid red: color:red'>Error: " . $error . "</div>";
                 }?>
-                <form method="post" action="admin-response.php">
+                <form method="POST" action="">
                     <?php if ($id == '') { ?>
                         <input type="hidden" name="id" value="<?php echo $id?>"/>
                     <?php } ?>
@@ -69,7 +69,7 @@
                     <p>date_acheived</p>
                     <input type="date" name="date_acheived" value="<?php echo $date_acheived?>">
                     <br>
-                    <input type="submit">
+                    <input type="submit" name="submit" value="submit">
                 </form>
             </body>
         </html>
