@@ -8,17 +8,19 @@
             //editing existing record; pre-fill the fields with the info for that record
             $error = '';
             print_r($_POST);
-            //if($_POST['score'] == ''){
             if(isset($_POST['submit'])){
                 $category = htmlentities($_POST['category'], ENT_QUOTES);
                 $score = htmlentities($_POST['score'], ENT_QUOTES);
                 if($score == '' || $category == '') {
                     $error = "Please complete category and score fields.";
+                } else {
+                    include("admin-response.php");
                 }
             }
             $id = $_GET['id'];
             $sql_command = "SELECT * FROM best_laps WHERE id = $id";
             $sql_result = mysqli_query($conn, $sql_command);
+            echo $sql_command;
             $row = mysqli_fetch_all($sql_result, MYSQLI_ASSOC)[0];
             if(count($row) == 0) echo "No record found with that ID";
             renderForm(
@@ -37,8 +39,19 @@
                 $row['date_acheived'],
             );
         } else {
-            //adding new record; leave fields blank
-            renderForm();
+            //adding new record; leave fields blank. $_GET['id']
+            if(isset($_POST['submit'])){
+                $category = htmlentities($_POST['category'], ENT_QUOTES);
+                $score = htmlentities($_POST['score'], ENT_QUOTES);
+                if($score == '' || $category == '') {
+                    $error = "Please complete category and score fields.";
+                } else {
+                    echo "Adding new score.";
+                    include("admin-response.php");
+                }
+            } else {
+                renderForm();
+            }
         }
 
     } else {
