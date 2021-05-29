@@ -36,7 +36,7 @@
                 $row['proof'],
                 0,//$row['crashToSaveTime'],
                 0,//$row['oob'],
-                $row['date_acheived'],
+                $row['date_acheived']
             );
         } else {
             //adding new record; leave fields blank. $_GET['id']

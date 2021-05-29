@@ -52,7 +52,3 @@ if(isset($_GET['id'])) {
     echo $sql_command;
     $sql_result = mysqli_query($conn, $sql_command);
 }
-
-
-if($category == '') echo "<br>Error: category is empty";
-if($score == '') echo "<br>Error: score is empty";
