@@ -37,7 +37,10 @@ if(isset($_GET['id'])) {
         } else echo "Error: could not prepare SQL statement";
         
         //remove this after changing to prepared statements
-        $sql_command = "UPDATE $category SET score = $score, reverse = $reverse, player = '$player', system = '$system', proof = '$proof', date_acheived = '$date_acheived', track_id = $track WHERE id = $id";
+        $sql_command = "UPDATE $category SET
+        score = $score, reverse = $reverse,
+        player = '$player', system = '$system', proof = '$proof',
+        date_acheived = '$date_acheived', track_id = $track WHERE id = $id";
         $sql_result = mysqli_query($conn, $sql_command);
         echo $sql_command;
         echo "<br>";
@@ -48,7 +51,9 @@ if(isset($_GET['id'])) {
     }
 } else {
     // inserting a new record
-    $sql_command = "INSERT INTO `$category` (`id`, `score`, `reverse`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`) VALUES (NULL, '$score', $reverse, '$car', '$player', '$system', '$proof', current_timestamp(), '$date_acheived', '$track')";
+    $sql_command = "INSERT INTO `$category`
+    (`id`, `score`, `reverse`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`)
+    VALUES (NULL, '$score', $reverse, '$car', '$player', '$system', '$proof', current_timestamp(), '$date_acheived', '$track')";
     echo $sql_command;
     $sql_result = mysqli_query($conn, $sql_command);
 }
