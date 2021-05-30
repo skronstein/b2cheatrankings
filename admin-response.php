@@ -51,9 +51,17 @@ if(isset($_GET['id'])) {
     }
 } else {
     // inserting a new record
-    $sql_command = "INSERT INTO `$category`
+    if ($stmt = $conn->prepare("INSERT INTO $category
     (`id`, `score`, `reverse`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`)
-    VALUES (NULL, '$score', $reverse, '$car', '$player', '$system', '$proof', current_timestamp(), '$date_acheived', '$track')";
-    echo $sql_command;
-    $sql_result = mysqli_query($conn, $sql_command);
+    VALUES (NULL, ?, ?, ?, ?, ?, ?, current_timestamp(), ?, ?)"))
+    {
+        $stmt->bind_param("iisssssi", $score, $reverse, $car, $player, $system, $proof, $date_acheived, $track);
+        $stmt->execute();
+        $stmt->close();
+    } else {
+        echo "<br>Error: Could not prepare SQL statement";
+        echo "<br>";
+        echo mysqli_error($conn);
+        echo "<br>";
+    }
 }
