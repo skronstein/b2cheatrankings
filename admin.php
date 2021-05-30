@@ -53,7 +53,7 @@
                 renderForm();
             }
         }
-
+        $conn->close();
     } else {
         echo "Not logged in";
     }
