@@ -24,9 +24,9 @@ if(isset($_GET['id'])) {
     // updating an existing record
     if(is_numeric($_GET['id']) && $_GET['id'] > 0){
         $id = $_GET['id'];
+        echo "updating record in admin-response.php";
+        echo "<br>";
         if($stmt = $conn->prepare("SELECT * FROM best_laps WHERE id = ?")){
-            echo "reading record in admin-response.php";
-            echo "<br>";
             //$stmt->bind_param("i", $id);
             //$stmt->execute();
 

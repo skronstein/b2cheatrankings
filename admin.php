@@ -5,10 +5,15 @@
         include('config/db_connect.php');
 
         if(isset($_GET['id'])){
-            //editing existing record; pre-fill the fields with the info for that record
+            $id = $_GET['id'];
+            if(!is_numeric($id) || $id < 1){
+                echo "Invalid ID";
+                return;
+            }
             $error = '';
             print_r($_POST);
             if(isset($_POST['submit'])){
+                //editing existing record; pre-fill the fields with the info for that record
                 $category = htmlentities($_POST['category'], ENT_QUOTES);
                 $score = htmlentities($_POST['score'], ENT_QUOTES);
                 if($score == '' || $category == '') {
@@ -17,7 +22,7 @@
                     include("admin-response.php");
                 }
             }
-            $id = $_GET['id'];
+            //show the (updated) info for the record
             $sql_command = "SELECT * FROM best_laps WHERE id = $id";
             $sql_result = mysqli_query($conn, $sql_command);
             echo $sql_command;
