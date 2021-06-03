@@ -25,27 +25,17 @@ if(isset($_GET['id'])) {
     if(is_numeric($_GET['id']) && $_GET['id'] > 0){
         $id = $_GET['id'];
         echo "updating record in admin-response.php";
-        echo "<br>";
-        if($stmt = $conn->prepare("SELECT * FROM best_laps WHERE id = ?")){
-            //$stmt->bind_param("i", $id);
-            //$stmt->execute();
-
-            ///$stmt->bind_result($id, $)
-            //fetch
-
-
+        if($stmt = $conn->prepare("UPDATE $category SET
+                score = ?, reverse = ?,
+                car = ?, player = ?,
+                system = ?, proof = ?,
+                date_acheived = ?, track_id = ?
+                WHERE id=?")){
+            // updating an existing record
+            $stmt->bind_param("iisssssii", $score, $reverse, $car, $player, $system, $proof, $date_acheived, $track, $id);
+            $stmt->execute();
+            $stmt->close();
         } else echo "Error: could not prepare SQL statement";
-        
-        //remove this after changing to prepared statements
-        $sql_command = "UPDATE $category SET
-        score = $score, reverse = $reverse,
-        player = '$player', system = '$system', proof = '$proof',
-        date_acheived = '$date_acheived', track_id = $track WHERE id = $id";
-        $sql_result = mysqli_query($conn, $sql_command);
-        echo $sql_command;
-        echo "<br>";
-        //$conn->close();
-        //header('Location: view.php');
     } else {
         header("Location: view.php");
     }
