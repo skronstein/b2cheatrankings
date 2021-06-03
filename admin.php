@@ -31,7 +31,7 @@
             }
             renderForm(
                 $error, 
-                $id, "best_laps", $score, $reverse, $car, $player, $track, $system, $proof, $date_acheived
+                $id, "best_laps", $score, $reverse, $car, $player, $track, $system, $proof, 0, 0, $date_acheived
             );
         } else {
             //adding new record; leave fields blank. $_GET['id']
