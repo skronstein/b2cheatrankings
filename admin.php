@@ -11,7 +11,6 @@
                 return;
             }
             $error = '';
-            //print_r($_POST);
             if(isset($_POST['submit'])){
                 //editing existing record; pre-fill the fields with the info for that record
                 $category = htmlentities($_POST['category'], ENT_QUOTES);
@@ -41,8 +40,8 @@
                 if($score == '' || $category == '') {
                     $error = "Please complete category and score fields.";
                 } else {
-                    echo "Adding new score.";
                     include("admin-response.php");
+                    header("Location: admin.php");
                 }
             } else {
                 renderForm();

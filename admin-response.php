@@ -24,17 +24,16 @@ if(isset($_GET['id'])) {
     // updating an existing record
     if(is_numeric($_GET['id']) && $_GET['id'] > 0){
         $id = $_GET['id'];
-        echo "updating record in admin-response.php";
         if($stmt = $conn->prepare("UPDATE $category SET
                 score = ?, reverse = ?,
                 car = ?, player = ?,
                 system = ?, proof = ?,
                 date_acheived = ?, track_id = ?
                 WHERE id=?")){
-            // updating an existing record
             $stmt->bind_param("iisssssii", $score, $reverse, $car, $player, $system, $proof, $date_acheived, $track, $id);
             $stmt->execute();
             $stmt->close();
+            header("Location: view.php");
         } else echo "Error: could not prepare SQL statement";
     } else {
         header("Location: view.php");
