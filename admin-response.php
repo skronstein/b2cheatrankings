@@ -36,7 +36,7 @@ if(isset($_GET['id'])) {
             header("Location: view.php");
         } else echo "Error: could not prepare SQL statement";
     } else {
-        header("Location: view.php");
+        echo "Error: ID is not valid";
     }
 } else {
     // inserting a new record

@@ -28,6 +28,10 @@
                     } else {
                         echo '<a href="admin.php">Add a record</a><br>';
                         echo "Edit record " . $id;
+                        if ($score == '') {
+                            echo "<br>No record with that ID";
+                            return;
+                        }
                     }?></h2>
                 <?php if($error != '') {
                     echo "<div style='padding: 4px; border: 1px solid red: color:red'>Error: " . $error . "</div>";
