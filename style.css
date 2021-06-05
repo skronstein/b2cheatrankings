@@ -79,3 +79,6 @@ button {
 .topright {
     width: 150px;
 }
+.text {
+    text-align: left;
+}

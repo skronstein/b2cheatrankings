@@ -6,11 +6,9 @@ $text_scores='Scores & Updates
 Latest Scores & Updates
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 News Archive';
-$internal_links='How to setup and use the cheat codes
-<br>Info, Tips & Strats
-<br>Submit a score/time
-<br>Players List
-<br>What are Race Crash Total and Big Crash?';
+$internal_links='
+<a href="setup.php">How to setup and use the cheat codes</a>
+<br><a href="info-driving-tips.php">Info, Tips & Strats</a>';
 $external_links='YouTube
 <br>Discord
 <br>cyberscore / speedrun.com for scores without cheats';
