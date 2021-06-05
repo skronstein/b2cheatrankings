@@ -3,11 +3,11 @@
    require('images.php');
    include('config/db_connect.php');
 ?>
-<link rel="stylesheet" type="text/css" href="bootstrap-darkly.min.css">
-<link rel="stylesheet" type="text/css" href="style.css">
 <html>
    <head>
       <title><?php echo $title;?></title>
+      <link rel="stylesheet" type="text/css" href="bootstrap-darkly.min.css">
+      <link rel="stylesheet" type="text/css" href="style.css">
    </head>
    <body>
       <div class="topbar">
