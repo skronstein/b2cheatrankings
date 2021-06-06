@@ -24,7 +24,8 @@
                 <?php echo '<a href="logout.php">Logout</a><br>';?>
                 <h2><?php
                     if($id == '') {
-                        echo "Add a Record";
+                        echo "Add a Record<br>";
+                        echo '<a href="view.php">View/Edit records</a><br>';
                     } else {
                         echo '<a href="admin.php">Add a record</a><br>';
                         echo "Edit record " . $id;
