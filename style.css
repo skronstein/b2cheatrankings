@@ -79,10 +79,7 @@ button {
 .topright {
     width: 150px;
 }
-.text {
-    text-align: left;
-}
-.hometext{
+.text{
    font-size: 20px;
    text-align: left;
    margin: 20px;
