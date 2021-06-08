@@ -2,7 +2,7 @@
     include("config/db_connect.php");
     function outputRecords($category, $order, $conn, $track, $reverse) {
         if($track > 12 && $category == "best_laps") {
-            echo "<br>N/A";
+            echo "<tr><td>N/A</td></tr>";
             return;
         }
         $sql_command = "SELECT score, car, player, system, proof, datetime_entered, date_acheived FROM $category WHERE track_id = $track AND reverse = $reverse ORDER BY score $order LIMIT 3";
