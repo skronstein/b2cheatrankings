@@ -45,7 +45,7 @@ table {
     grid-template-columns: 50% 50%;
 }
 button {
-    width: 90%;
+    width: 316px;
     height: 90%;
 }
 .external {
