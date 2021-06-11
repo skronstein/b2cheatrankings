@@ -1,4 +1,6 @@
 <?php
+   mysqli_report(MYSQLI_REPORT_ERROR);
+   
    //connect to database
    $config = parse_ini_file('../config.ini');
    $conn = new mysqli('localhost', $config['username'], $config['password'], $config['db']);

@@ -24,15 +24,15 @@
                 }
             }
             //show the (updated) info for the record
-            if($stmt = $conn->prepare("SELECT `score`, `reverse`, `car`, `player`, `system`, `proof`, `date_acheived`, `track_id` FROM best_laps WHERE id = ?")){
+            if($stmt = $conn->prepare("SELECT `score`, `reverse`, `car`, `player`, `system`, `proof`, `date_acheived`, `track_id`, `category` FROM records WHERE id = ?")){
                 $stmt->bind_param("i", $id);
                 $stmt->execute();
-                $stmt->bind_result($score, $reverse, $car, $player, $system, $proof, $date_acheived, $track);
+                $stmt->bind_result($score, $reverse, $car, $player, $system, $proof, $date_acheived, $track, $category);
                 $stmt->fetch();
             }
             renderForm(
                 $error, 
-                $id, "best_laps", $score, $reverse, $car, $player, $track, $system, $proof, 0, 0, $date_acheived
+                $id, $category, $score, $reverse, $car, $player, $track, $system, $proof, 0, 0, $date_acheived
             );
         } else {
             //adding new record; leave fields blank. $_GET['id']

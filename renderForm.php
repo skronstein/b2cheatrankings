@@ -42,7 +42,7 @@
                         <input type="hidden" name="id" value="<?php echo $id?>"/>
                     <?php } ?>
                     <p>Category - choices:<br> lap trt/race bc rct air mcic</p>
-                    <input type="text" name="category" value="lap">
+                    <input type="text" name="category" value="<?php echo $category ?>">
                     <p>Score</p>
                     <input type="text" name="score" value="<?php echo $score?>">
                     <p>Reverse</p>
@@ -54,7 +54,7 @@
                     <p>track</p>
                     <select name="track" id="track" value="Sunrise Valley Downtown"><?php
                         include('config/db_connect.php');
-                        $sql_command = "SELECT id, name FROM tracks";
+                        $sql_command = "SELECT name FROM tracks WHERE 1";
                         $sql_result = mysqli_query($conn, $sql_command);
                         $tracks = mysqli_fetch_all($sql_result, MYSQLI_ASSOC);
                         for($itr = 0; $itr < 15; $itr++) {

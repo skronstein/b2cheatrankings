@@ -13,11 +13,11 @@
         <?php
             require("protect.php");
             include('config/db_connect.php');
-            if ($result = $conn->query("SELECT * FROM best_laps ORDER BY id")){
+            if ($result = $conn->query("SELECT * FROM records ORDER BY id")){
                 if($result->num_rows > 0)
                 {
                     echo "<table border=1 cellpadding='10'>";
-                    echo "<tr><th>ID</th><th>Score</th><th>Reverse</th><th>Player</th><th>Track</th><th>System</th><th>Edit</th><th>Delete</th></tr>";
+                    echo "<tr><th>ID</th><th>Score</th><th>Reverse</th><th>Player</th><th>Track</th><th>System</th><th>Category</th><th>Edit</th><th>Delete</th></tr>";
 
                     while ($row = $result->fetch_object()){
                         echo "<tr>";
@@ -27,6 +27,7 @@
                         echo "<td>" . $row->player . "</td>";
                         echo "<td>" . $row->track_id . "</td>";
                         echo "<td>" . $row->system . "</td>";
+                        echo "<td>" . $row->category . "</td>";
                         echo "<td><a href='admin.php?id=$row->id'>" . "Edit" . "</td>";
                         echo "<td><a href='delete.php?id=$row->id'>" . "Delete" . "</td>";
                         echo "</tr>";

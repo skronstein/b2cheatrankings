@@ -1,13 +1,14 @@
 <?php
 include("config/db_connect.php");
 require("protect.php");
-
 if($_POST['category'] == 'lap') $category = 'best_laps';
+if($_POST['category'] == 'best_laps') $category = 'best_laps';
 if($_POST['category'] == 'trt') $category = 'total_times';
 if($_POST['category'] == 'race') $category = 'total_times';
 if($_POST['category'] == 'bc') $category = 'big_crash';
 if($_POST['category'] == 'rct') $category = 'race_crash_totals';
 if($_POST['category'] == 'air') $category = 'big_airs';
+if($_POST['category'] == 'big_airs') $category = 'big_airs';
 if($_POST['category'] == 'mcic') $category = 'most_cars_in_crashes';
 
 $score = htmlentities($_POST['score'], ENT_QUOTES);
@@ -24,13 +25,13 @@ if(isset($_GET['id'])) {
     // updating an existing record
     if(is_numeric($_GET['id']) && $_GET['id'] > 0){
         $id = $_GET['id'];
-        if($stmt = $conn->prepare("UPDATE $category SET
+        if($stmt = $conn->prepare("UPDATE records SET
                 score = ?, reverse = ?,
                 car = ?, player = ?,
                 system = ?, proof = ?,
-                date_acheived = ?, track_id = ?
+                date_acheived = ?, track_id = ?, category = ?
                 WHERE id=?")){
-            $stmt->bind_param("iisssssii", $score, $reverse, $car, $player, $system, $proof, $date_acheived, $track, $id);
+            $stmt->bind_param("iisssssisi", $score, $reverse, $car, $player, $system, $proof, $date_acheived, $track, $category, $id);
             $stmt->execute();
             $stmt->close();
             header("Location: view.php");
@@ -40,11 +41,11 @@ if(isset($_GET['id'])) {
     }
 } else {
     // inserting a new record
-    if ($stmt = $conn->prepare("INSERT INTO $category
-    (`id`, `score`, `reverse`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`)
-    VALUES (NULL, ?, ?, ?, ?, ?, ?, current_timestamp(), ?, ?)"))
+    if ($stmt = $conn->prepare("INSERT INTO records
+    (`id`, `score`, `reverse`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`, `category`)
+    VALUES (NULL, ?, ?, ?, ?, ?, ?, current_timestamp(), ?, ?, ?)"))
     {
-        $stmt->bind_param("iisssssi", $score, $reverse, $car, $player, $system, $proof, $date_acheived, $track);
+        $stmt->bind_param("iisssssis", $score, $reverse, $car, $player, $system, $proof, $date_acheived, $track, $category);
         $stmt->execute();
         $stmt->close();
     } else {
