@@ -64,7 +64,10 @@
                         }
                     ?></select>
                     <p>system</p>
-                    <input type="text" name="system" value="<?php echo $system?>">
+                    <select name="system">
+                        <option value="Dolphin">Dolphin</option>
+                        <option value="Gamecube/Wii" <?php if($system == "Gamecube/Wii") echo " selected" ; ?>>Gamecube/Wii</option>
+                    </select>
                     <p>proof</p>
                     <input type="text" name="proof" value="<?php echo $proof?>">
                     <p>crashToSaveTime</p>
