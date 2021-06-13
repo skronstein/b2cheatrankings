@@ -14,6 +14,8 @@ if($_POST['category'] == 'mcic') $category = 'most_cars_in_crashes';
 $score = htmlentities($_POST['score'], ENT_QUOTES);
 if(isset($_POST['reverse']) && htmlentities($_POST['reverse'], ENT_QUOTES) == 'on') $reverse = 1;
 else $reverse = 0;
+if(isset($_POST['traffic']) && htmlentities($_POST['traffic'], ENT_QUOTES) == 'on') $traffic = 1;
+else $traffic = 0;
 $car = htmlentities($_POST['car'], ENT_QUOTES);
 $player = htmlentities($_POST['player'], ENT_QUOTES);
 $track = htmlentities($_POST['track'] + 1, ENT_QUOTES);
@@ -26,12 +28,12 @@ if(isset($_GET['id'])) {
     if(is_numeric($_GET['id']) && $_GET['id'] > 0){
         $id = $_GET['id'];
         if($stmt = $conn->prepare("UPDATE records SET
-                score = ?, reverse = ?,
+                score = ?, reverse = ?, traffic = ?,
                 car = ?, player = ?,
                 system = ?, proof = ?,
                 date_acheived = ?, track_id = ?, category = ?
                 WHERE id=?")){
-            $stmt->bind_param("iisssssisi", $score, $reverse, $car, $player, $system, $proof, $date_acheived, $track, $category, $id);
+            $stmt->bind_param("iissssssisi", $score, $reverse, $traffic, $car, $player, $system, $proof, $date_acheived, $track, $category, $id);
             $stmt->execute();
             $stmt->close();
             header("Location: view.php");
@@ -42,10 +44,10 @@ if(isset($_GET['id'])) {
 } else {
     // inserting a new record
     if ($stmt = $conn->prepare("INSERT INTO records
-    (`id`, `score`, `reverse`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`, `category`)
-    VALUES (NULL, ?, ?, ?, ?, ?, ?, current_timestamp(), ?, ?, ?)"))
+    (`id`, `score`, `reverse`, `traffic`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`, `category`)
+    VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, current_timestamp(), ?, ?, ?)"))
     {
-        $stmt->bind_param("iisssssis", $score, $reverse, $car, $player, $system, $proof, $date_acheived, $track, $category);
+        $stmt->bind_param("iissssssis", $score, $reverse, $traffic, $car, $player, $system, $proof, $date_acheived, $track, $category);
         $stmt->execute();
         $stmt->close();
     } else {

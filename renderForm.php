@@ -4,6 +4,7 @@
                         $category = '',
                         $score = '',
                         $reverse = '',
+                        $traffic = '',
                         $car = '',
                         $player = '',
                         $track = '',
@@ -47,6 +48,8 @@
                     <input type="text" name="score" value="<?php echo $score?>">
                     <p>Reverse</p>
                     <input type="checkbox" name="reverse" <?php echo $reverse ? "checked":""?> >
+                    <p>Traffic</p>
+                    <input type="checkbox" name="traffic" <?php echo $traffic ? "checked":""?> >
                     <p>Car</p>
                     <input type="text" name="car" value="<?php echo $car?>">
                     <p>Player</p>

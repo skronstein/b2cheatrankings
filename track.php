@@ -26,7 +26,7 @@
    ?></h2></div></div></div></div>
    <div class="trackfilters">
       <div class="filtergrid">
-         <div><button class="btn btn-lg btn-primary" id="traffic" onClick='updateHalf()'>Traffic</button></div>
+         <div><button class="btn btn-lg btn-primary" id="traffic" onClick='toggleTraffic(); updateHalf()'>Traffic: Off</button></div>
          <div><button class="btn btn-lg btn-primary" id="direction" onClick='toggleReverse(); updateAll()'>Direction: Forward</button></div>
          <div><button class="btn btn-lg btn-primary">Out of Bounds</button></div>
          <div><button class="btn btn-lg btn-primary">Codes</button></div>
@@ -37,37 +37,37 @@
          <div class="subcontainer-tracks">
             <b>Best Lap</b><br>
             <table id="best_laps">
-              <?php outputRecords("best_laps", "ASC", $conn, $track, $reverse); ?>
+              <?php outputRecords("best_laps", "ASC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
             <b>Total Race Time</b><br>
             <table id="total_times">
-              <?php outputRecords("total_times", "ASC", $conn, $track, $reverse); ?>
+              <?php outputRecords("total_times", "ASC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
             <b>Big Crash</b><br>
             <table id="big_crashes">
-               <?php outputRecords("big_crashes", "DESC", $conn, $track, $reverse); ?>
+               <?php outputRecords("big_crashes", "DESC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
             <b>Race Crash Total</b><br>
             <table id="race_crash_totals">
-               <?php outputRecords("race_crash_totals", "DESC", $conn, $track, $reverse); ?>
+               <?php outputRecords("race_crash_totals", "DESC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
             <b>Big Air</b><br>
             <table id="big_airs">
-              <?php outputRecords("big_airs", "DESC", $conn, $track, $reverse); ?>
+              <?php outputRecords("big_airs", "DESC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
             <b>Most Cars in Crash</b><br>
             <table id="most_cars_in_crashes">
-              <?php outputRecords("most_cars_in_crashes", "DESC", $conn, $track, $reverse); ?>
+              <?php outputRecords("most_cars_in_crashes", "DESC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
       </div>

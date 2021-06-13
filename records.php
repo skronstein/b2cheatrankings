@@ -1,6 +1,6 @@
 <?php
     include("config/db_connect.php");
-    function outputRecords($category, $order, $conn, $track, $reverse) {
+    function outputRecords($category, $order, $conn, $track, $reverse, $traffic) {
         if($track > 12 && $category == "best_laps") {
             echo "<tr><td>N/A</td></tr>";
             return;
@@ -8,6 +8,7 @@
         $sql_command = "SELECT score, car, player, system, proof, datetime_entered, date_acheived FROM records WHERE
             track_id = $track AND
             reverse = $reverse AND
+            traffic = $traffic AND
             category = '$category'
             ORDER BY score $order LIMIT 3";
         $sql_result = mysqli_query($conn, $sql_command);

@@ -12,6 +12,10 @@ $reverse = $_GET['reverse'];
 if($reverse == 'true') $reverse = 1;
 else $reverse = 0;
 
-outputRecords($category, $order, $conn, $track, $reverse);
+$traffic = $_GET['traffic'];
+if($traffic == 'true') $traffic = 1;
+else $traffic = 0;
+
+outputRecords($category, $order, $conn, $track, $reverse, $traffic);
 
 exit();
