@@ -11,7 +11,7 @@
           return;
       }?>
 
-<script>thestring_base = "records-filter.php?track=<?php echo $track?>";</script>
+<script>recordsFilter_base = "records-filter.php?track=<?php echo $track?>";</script>
 <script src="track.js"></script>
 
 <div class="trackinfo">
