@@ -28,8 +28,6 @@
       <div class="filtergrid">
          <div><button class="btn btn-lg btn-primary" id="traffic" onClick='toggleTraffic(); updateHalf()'>Traffic: Off</button></div>
          <div><button class="btn btn-lg btn-primary" id="direction" onClick='toggleReverse(); updateAll()'>Direction: Forward</button></div>
-         <div><button class="btn btn-lg btn-primary">Out of Bounds</button></div>
-         <div><button class="btn btn-lg btn-primary">Codes</button></div>
       </div>
    </div>
 </div>
