@@ -1,18 +1,13 @@
 
    reverse = false;
    thestring = '';
-   function updateHalf() {
+   function toggleReverse() {
       reverse = !reverse;
-      if(reverse) {
-         document.getElementById('direction').innerHTML = "Direction: Reverse";
-      }
-      else {
-         document.getElementById('direction').innerHTML = "Direction: Forward";
-      }
-
+      if(reverse) document.getElementById('direction').innerHTML = "Direction: Reverse";
+      else document.getElementById('direction').innerHTML = "Direction: Forward";
+   }
+   function updateHalf() {
       thestring = thestring_base + "&reverse=" + reverse;
-      //console.log(thestring);
-
       ajaxFunction("best_laps");
       ajaxFunction("total_times");
       ajaxFunction("big_airs");

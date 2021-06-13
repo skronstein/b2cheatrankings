@@ -26,8 +26,8 @@
    ?></h2></div></div></div></div>
    <div class="trackfilters">
       <div class="filtergrid">
-         <div><button class="btn btn-lg btn-primary">Traffic</button></div>
-         <div><button class="btn btn-lg btn-primary" id="direction" onClick='updateAll()'>Direction: Forward</button></div>
+         <div><button class="btn btn-lg btn-primary" id="traffic" onClick='updateHalf()'>Traffic</button></div>
+         <div><button class="btn btn-lg btn-primary" id="direction" onClick='toggleReverse(); updateAll()'>Direction: Forward</button></div>
          <div><button class="btn btn-lg btn-primary">Out of Bounds</button></div>
          <div><button class="btn btn-lg btn-primary">Codes</button></div>
       </div>
