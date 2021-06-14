@@ -7,6 +7,7 @@
          <p><?php echo $text_welcome; ?></p>
          <p><?php echo $internal_links; ?></p>
          <p><?php echo $external_links; ?></p>
+         <p>Website designed and built by <a href="https://github.com/skronstein">Simon Kronstein</a></p>
       </div>
    </body>
 
