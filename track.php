@@ -3,6 +3,14 @@
    include('records.php');
    include("config/db_connect.php");
    $track = $_GET['track'];
+   if(!is_numeric($track)) {
+      echo "<br>Invalid track number";
+      return;
+   }
+   if($track < 1 || $track > 15) {
+      echo "<br>Track number must be between 1 and 15";
+      return;
+   }
    $reverse = 0;
 ?>
 <br>
