@@ -29,16 +29,16 @@
                         }
                         echo number_format($seconds,3,".",",");
                     }
-                    else { echo number_format($score['score'], 0,".",","); }
+                    else { echo number_format(htmlentities($score['score']), 0,".",","); }
                 ?></td>
-                <td><?php echo $score['player']; ?></td>
+                <td><?php echo htmlentities($score['player']); ?></td>
                 <td><?php
-                    $unixtime = strtotime($score['date_acheived']);
+                    $unixtime = strtotime(htmlentities($score['date_acheived']));
                     echo date("F j, Y", $unixtime);
                 ?></td>
-                <td><img width=75px src="images/cars/<?php echo $score['car']; ?>.png"></td>
+                <td><img width=75px src="images/cars/<?php echo htmlentities($score['car']); ?>.png"></td>
                 <td><?php echo $score['system']; ?></td>
-                <td><a href="<?php echo $score['proof']; ?>"><img src="images/logos/youtube2.png"></a></td>
+                <td><a href="<?php echo htmlentities($score['proof']); ?>"><img src="images/logos/youtube2.png"></a></td>
             </tr>
         <?php endforeach; ?>
         <?php
