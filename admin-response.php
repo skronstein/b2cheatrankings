@@ -33,7 +33,7 @@ if(isset($_GET['id'])) {
                 system = ?, proof = ?,
                 date_acheived = ?, track_id = ?, category = ?
                 WHERE id=?")){
-            $stmt->bind_param("iissssssisi", $score, $reverse, $traffic, $car, $player, $system, $proof, $date_acheived, $track, $category, $id);
+            $stmt->bind_param("iiisssssisi", $score, $reverse, $traffic, $car, $player, $system, $proof, $date_acheived, $track, $category, $id);
             $stmt->execute();
             $stmt->close();
             header("Location: view.php");
@@ -47,7 +47,7 @@ if(isset($_GET['id'])) {
     (`id`, `score`, `reverse`, `traffic`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`, `category`)
     VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, current_timestamp(), ?, ?, ?)"))
     {
-        $stmt->bind_param("iissssssis", $score, $reverse, $traffic, $car, $player, $system, $proof, $date_acheived, $track, $category);
+        $stmt->bind_param("iiisssssis", $score, $reverse, $traffic, $car, $player, $system, $proof, $date_acheived, $track, $category);
         $stmt->execute();
         $stmt->close();
     } else {
