@@ -8,7 +8,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
         $stmt->execute();
         $stmt->close();
     } else {
-        echo "ERROR: could not preapre SQL statement.";
+        echo "ERROR: could not prepare SQL statement.";
     }
     $conn->close();
     header("Location: view.php");
