@@ -21,15 +21,15 @@
 
                     while ($row = $result->fetch_object()){
                         echo "<tr>";
-                        echo "<td>" . $row->id . "</td>";
-                        echo "<td>" . $row->score . "</td>";
-                        echo "<td>" . $row->reverse . "</td>";
-                        echo "<td>" . $row->player . "</td>";
-                        echo "<td>" . $row->track_id . "</td>";
-                        echo "<td>" . $row->system . "</td>";
-                        echo "<td>" . $row->category . "</td>";
-                        echo "<td><a href='admin.php?id=$row->id'>" . "Edit" . "</td>";
-                        echo "<td><a href='delete.php?id=$row->id'>" . "Delete" . "</td>";
+                        echo "<td>" . htmlspecialchars($row->id) . "</td>";
+                        echo "<td>" . htmlspecialchars($row->score) . "</td>";
+                        echo "<td>" . htmlspecialchars($row->reverse) . "</td>";
+                        echo "<td>" . htmlspecialchars($row->player) . "</td>";
+                        echo "<td>" . htmlspecialchars($row->track_id) . "</td>";
+                        echo "<td>" . htmlspecialchars($row->system) . "</td>";
+                        echo "<td>" . htmlspecialchars($row->category) . "</td>";
+                        echo "<td><a href='admin.php?id=" . htmlspecialchars($row->id) . "'>" . "Edit" . "</td>";
+                        echo "<td><a href='delete.php?id=" . htmlspecialchars($row->id) . "'>" . "Delete" . "</td>";
                         echo "</tr>";
                     }
                     echo "</table>";
