@@ -51,10 +51,8 @@ button {
 .external {
     display: table;
     position: relative;
-    top: 0;
-    left: 15;
     height: 100%;
-    width: 100%;
+    width: 95%;
 }
 .middle {
     display: table-cell;
