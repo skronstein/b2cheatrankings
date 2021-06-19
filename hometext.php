@@ -1,7 +1,7 @@
 <?php
 $text_welcome='This site lists the best times and scores
 done in Burnout 2: Point of Impact using the "Super
-Acceleration" and "Hyper Acceleration" cheat codes.
+Acceleration" and "Disable Speed Restriction" cheat codes.
 <br>
 Click on a track icon above to view records for that track.';
 $text_scores='Scores & Updates
