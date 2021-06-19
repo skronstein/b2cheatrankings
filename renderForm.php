@@ -42,19 +42,16 @@
                     <?php if ($id == '') { ?>
                         <input type="hidden" name="id" value="<?php echo $id?>"/>
                     <?php } ?>
-                    <p>Category - choices:<br> lap trt/race bc rct air mcic</p>
+                    
                     <input type="text" name="category" value="<?php echo $category ?>">
-                    <p>Score</p>
-                    <input type="text" name="score" value="<?php echo $score?>">
-                    <p>Reverse</p>
-                    <input type="checkbox" name="reverse" <?php echo $reverse ? "checked":""?> >
-                    <p>Traffic</p>
-                    <input type="checkbox" name="traffic" <?php echo $traffic ? "checked":""?> >
-                    <p>Car</p>
-                    <input type="text" name="car" value="<?php echo $car?>">
-                    <p>Player</p>
-                    <input type="text" name="player" value="<?php echo $player?>">
-                    <p>track</p>
+                    Category - choices: lap trt/race bc rct air mcic<br>
+
+                    <input type="text" name="score" value="<?php echo $score?>"> Score<br>
+                    <input type="checkbox" name="reverse" <?php echo $reverse ? "checked":""?> > Reverse<br>
+                    <input type="checkbox" name="traffic" <?php echo $traffic ? "checked":""?> > Traffic<br>
+                    <input type="text" name="car" value="<?php echo $car?>"> Car<br>
+                    <input type="text" name="player" value="<?php echo $player?>"> Player<br>
+
                     <select name="track" id="track" value="Sunrise Valley Downtown"><?php
                         include('config/db_connect.php');
                         $sql_command = "SELECT name FROM tracks WHERE 1";
@@ -65,20 +62,18 @@
                             else $selected = "";
                             echo "<option value=\"$itr\" $selected>" . $tracks[$itr]['name'] . " </option>";
                         }
-                    ?></select>
-                    <p>system</p>
+                    ?></select> Track<br>
+
                     <select name="system">
                         <option value="Dolphin">Dolphin</option>
                         <option value="Gamecube/Wii" <?php if($system == "Gamecube/Wii") echo " selected" ; ?>>Gamecube/Wii</option>
                     </select>
-                    <p>proof</p>
-                    <input type="text" name="proof" value="<?php echo $proof?>">
-                    <p>crashToSaveTime</p>
-                    <input type="text" name="crashToSaveTime" value="<?php echo $crashToSaveTime?>">
-                    <p>oob</p>
-                    <input type="text" name="oob" value="<?php echo $oob?>">
-                    <p>date_acheived</p>
-                    <input type="date" name="date_acheived" value="<?php echo $date_acheived?>">
+                    System<br>
+
+                    <input type="text" name="proof" value="<?php echo $proof?>"> Proof<br>
+                    <input type="text" name="crashToSaveTime" value="<?php echo $crashToSaveTime?>"> crashToSaveTime<br>
+                    <input type="text" name="oob" value="<?php echo $oob?>"> oob<br>
+                    <input type="date" name="date_acheived" value="<?php echo $date_acheived?>"> date_acheived<br>
                     <br>
                     <input type="submit" name="submit" value="submit">
                 </form>
