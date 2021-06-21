@@ -27,6 +27,7 @@
                     if($id == '') {
                         echo "Add a Record<br>";
                         echo '<a href="view.php">View/Edit records</a><br>';
+                        $category = 'lap'; // set default category to lap because that is used most often
                     } else {
                         echo '<a href="admin.php">Add a record</a><br>';
                         echo "Edit record " . $id;
