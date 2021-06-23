@@ -1,3 +1,7 @@
+<head>
+    <title>B2CR Admin Login</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap-darkly.min.css">
+</head>
 <?php
 session_start();
 if(isset($_SESSION['isLoggedIn'])) {
