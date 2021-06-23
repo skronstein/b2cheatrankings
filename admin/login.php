@@ -5,7 +5,7 @@
 <?php
 session_start();
 if(isset($_SESSION['isLoggedIn'])) {
-    echo '<a href="logout.php">Logout</a>';
+    header('Location: admin.php');
 } else {
     $loginForm = <<<THEFORM
 
