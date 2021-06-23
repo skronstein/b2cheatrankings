@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" type="text/css" href="bootstrap-darkly.min.css">
+<link rel="stylesheet" type="text/css" href="../bootstrap-darkly.min.css">
 <?php
     require("protect.php");
     require("renderForm.php");
