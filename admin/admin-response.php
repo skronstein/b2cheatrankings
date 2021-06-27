@@ -30,7 +30,7 @@ if(isset($_GET['id'])) {
         if($stmt = $conn->prepare("UPDATE records SET
                 score = ?, reverse = ?, traffic = ?,
                 car = ?, player = ?,
-                system = ?, proof = ?,
+                `system` = ?, proof = ?,
                 date_acheived = ?, track_id = ?, category = ?
                 WHERE id=?")){
             $stmt->bind_param("iiisssssisi", $score, $reverse, $traffic, $car, $player, $system, $proof, $date_acheived, $track, $category, $id);

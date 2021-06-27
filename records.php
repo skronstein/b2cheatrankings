@@ -5,7 +5,7 @@
             echo "<tr><td>N/A</td></tr>";
             return;
         }
-        $sql_command = "SELECT score, car, player, system, proof, datetime_entered, date_acheived FROM records WHERE
+        $sql_command = "SELECT score, car, player, `system`, proof, datetime_entered, date_acheived FROM records WHERE
             track_id = $track AND
             reverse = $reverse AND
             traffic = $traffic AND
