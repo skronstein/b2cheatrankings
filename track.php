@@ -2,7 +2,8 @@
    require('header.php');
    include('records.php');
    include("config/db_connect.php");
-   $track = $_GET['track'];
+   if(isset($_GET['track'])) $track = $_GET['track'];
+   else $track = 1;
    if(!is_numeric($track)) {
       echo "<br>Invalid track number";
       return;
