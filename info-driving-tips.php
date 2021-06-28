@@ -24,11 +24,11 @@ If you hold A without Y above 160mph, your car will rapidly decelerate to about 
 
 <h1>Best cars for use with super acceleration:</h1>
 <ul>
-<li>oval racer: excellent acceleration, even when the needle goes big. Easier to control and harder to flip than j-muscle, even when that car isn't flipping over.</li>
-<li>japanese muscle: best for tight tracks. Average acceleration. sometimes flips when accelerating over bumps. Top speed I've attained so far with turbostart was 472mph.</li>
-<li>gangster: best acceleration, especially past 350mph. top speed at least 467mph without turbostart. can do 500mph with turbostart. but even on palm bay marina, my laps were a few seconds faster in the oval racer.</li>
-<li>hotrod: good accel, hard to flip over. but tires have low grip. I did 698mph with turbostart on Big Surf Grove.</li>
-<li>custom coupe: not as fast as custom compact, but handling is better. When going over bumps at high speeds, the car sinks into the ground more than other cars do, so you spend less time in the air, which means you can start accelerating again sooner after the jump. This is most noticeable on Big Surf Shores and on the bumps near the beginning of 88 Interchange. turbostart top speed 442mph</li>
+<li>Oval Racer: Very good acceleration, even when the needle goes big. Best car for most tracks, especially ones with long straight areas. Easier to control and harder to flip than the Japanese Muscle</li>
+<li>Japanese Muscle: Best for tight tracks. Average acceleration. Sometimes flips when accelerating over bumps such as sidewalks. Top speed I've attained so far with turbostart was 472mph.</li>
+<li>Gangster: Best acceleration of any car when using Disable Speed Restriction, especially past 350mph. top speed at least 467mph without turbostart and 500mph with turbostart. However, tires have less grip than most other cars.</li>
+<li>Hotrod: Excellent acceleration, almost as fast as the Gangster. hard to flip over, even when accelerating over bumps. I did 698mph with turbostart on Big Surf Grove.</li>
+<li>Custom Coupe: Average acceleration. When going over bumps at high speeds, the car sinks into the ground more than other cars do, so you spend less time in the air, which means you can start accelerating again sooner after the jump. This is most noticeable on some parts of Big Surf Shores, and on the bumps near the beginning of 88 Interchange. The highest speed I've attained with turbstart was 442mph.</li>
 </ul>
 
 </div>
