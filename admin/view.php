@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Records</title>
+    <title>B2CR Admin: View/Edit</title>
     <link rel="stylesheet" type="text/css" href="../bootstrap-darkly.min.css">
 </head>
     <body>
-        <h1>View Records</h1>
+        <h1>B2CR Admin: View/Edit Records</h1>
 
         <?php
             require("protect.php");

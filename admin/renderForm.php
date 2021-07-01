@@ -14,7 +14,7 @@
                         $oob = '',
                         $date_acheived='')
     {
-        $title='B2CR admin'; ?>
+        $title='B2CR Admin: Add'; ?>
         
         <html>
             <head>
