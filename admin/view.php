@@ -13,6 +13,8 @@
         <?php
             require("protect.php");
             include('config/db_connect.php');
+            echo '<a href="logout.php">Logout</a><br>';
+            echo '<h2><a href="admin.php">Add a record</a><br></h2>';
             if ($result = $conn->query("SELECT * FROM records ORDER BY id")){
                 if($result->num_rows > 0)
                 {
