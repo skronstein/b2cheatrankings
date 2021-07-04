@@ -72,8 +72,8 @@
                     System<br>
 
                     <input type="text" name="proof" value="<?php echo $proof?>"> Proof<br>
-                    <input type="text" name="crashToSaveTime" value="<?php echo $crashToSaveTime?>"> crashToSaveTime<br>
-                    <input type="text" name="oob" value="<?php echo $oob?>"> oob<br>
+                    <!-- <input type="text" name="crashToSaveTime" value="<?php echo $crashToSaveTime?>"> crashToSaveTime<br> -->
+                    <!-- <input type="text" name="oob" value="<?php echo $oob?>"> oob<br> -->
                     <input type="date" name="date_acheived" value="<?php echo $date_acheived?>"> date_acheived<br>
                     <br>
                     <input type="submit" name="submit" value="submit">
