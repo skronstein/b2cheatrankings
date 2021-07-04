@@ -42,37 +42,37 @@
 </div>
       <div class="container container-tracks">
          <div class="subcontainer-tracks">
-            <b>Best Lap</b><br>
+            <h3>Best Lap</h3><br>
             <table id="best_laps">
               <?php outputRecords("best_laps", "ASC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
-            <b>Total Race Time</b><br>
+            <h3>Total Race Time</h3><br>
             <table id="total_times">
               <?php outputRecords("total_times", "ASC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
-            <b>Big Crash</b><br>
+            <h3>Big Crash</h3><br>
             <table id="big_crashes">
                <?php outputRecords("big_crashes", "DESC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
-            <b>Race Crash Total</b><br>
+            <h3>Race Crash Total</h3><br>
             <table id="race_crash_totals">
                <?php outputRecords("race_crash_totals", "DESC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
-            <b>Big Air</b><br>
+            <h3>Big Air</h3><br>
             <table id="big_airs">
               <?php outputRecords("big_airs", "DESC", $conn, $track, $reverse, 0); ?>
             </table>
          </div>
          <div class="subcontainer-tracks">
-            <b>Most Cars in Crash</b><br>
+            <h3>Most Cars in Crash</h3><br>
             <table id="most_cars_in_crashes">
               <?php outputRecords("most_cars_in_crashes", "DESC", $conn, $track, $reverse, 0); ?>
             </table>
