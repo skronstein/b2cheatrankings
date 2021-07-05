@@ -1,14 +1,18 @@
 <?php
     include("config/db_connect.php");
     function outputRecords($category, $order, $conn, $track, $reverse, $traffic) {
+        //for point-to-point track, show N/A for best laps because they are only 1 lap
         if($track > 12 && $category == "best_laps") {
             echo "<tr><td>N/A</td></tr>";
             return;
         }
+        //for crash scores, don't check if records were done with traffic because they were all done with traffic
+        if(strpos($category, 'crash') !== false) $traffic_string = "";
+        else $traffic_string = "traffic = $traffic AND";
         $sql_command = "SELECT score, car, player, `system`, proof, datetime_entered, date_acheived FROM records WHERE
             track_id = $track AND
             reverse = $reverse AND
-            traffic = $traffic AND
+            $traffic_string
             category = '$category'
             ORDER BY score $order LIMIT 3";
         $sql_result = mysqli_query($conn, $sql_command);
