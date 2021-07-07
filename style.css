@@ -78,5 +78,6 @@ button {
 .text{
    font-size: 20px;
    text-align: left;
-   margin: 20px;
+   margin: 20px auto 10px auto;
+   width: 1170px;
 }
