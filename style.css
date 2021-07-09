@@ -36,15 +36,28 @@ table {
 }
 .trackfilters {
     width: 100%;
-    text-align: right;
+    text-align: left;
 }
-.filtergrid {
-    display: grid;
-    grid-template-columns: 50% 50%;
+@media (max-width: 1175px) {
+    .filtergrid {
+        display: grid;
+        grid-template-rows: 50% 50%;
+    }
+    button {
+        width: 316px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
 }
-button {
-    width: 316px;
-    height: 128px;
+@media (min-width: 1176px) {
+    .filtergrid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    button {
+        width: 316px;
+        height: 128px;
+    }
 }
 .external {
     display: table;
