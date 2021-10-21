@@ -7,6 +7,7 @@
 
 <h1>Setup</h1>
 
+
 <p>These are instructions on how to enable and use the Super Acceleration and Disable Speed Restriction codes for racing in Burnout 2 on Dolphin.</p>
 
 
@@ -47,5 +48,9 @@ Copy the gci file into the Card A folder before starting Dolphin.</p>
 The Disable Speed Restriction and Super Acceleration codes are originally from <a href="https://web.archive.org/web/20070225032326/http://arcentral.net/Codes/NTSC/Burnout_2.php">arcentral.net</a>
 <br>
 The <a href="https://crashmode.forumotion.com/t57-motion-blur-removal-ar-code">motion blur removal code</a> was created by me, sparker599.
+<br>
+icons from iconfinder.com
+<br><br>
+<?php include("footer.php");?>
 
 </div>
