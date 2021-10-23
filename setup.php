@@ -1,7 +1,6 @@
 <?php
    require('header.php');
 ?>
-<link rel="stylesheet" type="text/css" href="style.css">
 
 <div class="text">
 
