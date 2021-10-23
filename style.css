@@ -104,6 +104,7 @@ article{
 	line-height: 1.6em;
 	padding: 5px;
 	transition: background-color .3s;
+	border-radius: 10px;
 }
 article:hover{
 	background-color: #f6f6f6;
