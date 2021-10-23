@@ -93,8 +93,14 @@ table {
    margin: 20px auto 10px auto;
    width: 1170px;
 }
+tr{
+	transition: background-color .3s;
+}
 tr:hover{
 	background-color: #f6f6f6;
+}
+td img{
+	margin: 5px 0 5px 0;
 }
 table{
 	border-spacing: 0;
