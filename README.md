@@ -13,4 +13,3 @@ This website works with a MySQL database to store and display records for the ga
 7. Open the database in phpMyAdmin or in a MySQL command line and enter a password_hash for the user that is in the 'users' table. Use the bcrypt hash you found in the previous step.
 8. The site should now be ready to use.
 	To create, read, update and delete records, go to admin/login.php, input the admin username and password you chose, press Login, and you will be able to use the admin section of the website.
-	To browse the site as a normal user, open home.php.
