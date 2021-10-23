@@ -11,7 +11,7 @@
 <div class="wrapper row1">
   <header id="header" class="clear">
     <div id="hgroup">
-      <h1><a href="home.php">Burnout 2 Cheat Records</a></h1>
+      <h1><a href="home.php">Home</a></h1>
       <!-- <h2>Free HTML5 Website Template</h2> -->
     </div>
     <nav>
