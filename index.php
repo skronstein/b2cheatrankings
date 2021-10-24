@@ -13,20 +13,24 @@
     </section>
     <!-- main content -->
     <section id="services" class="clear">
-      <!-- article 1 -->
-      <article class="one_half">
-        <h2>Setup & use of the cheat codes</h2>
-        <a href="setup.php"><img src="images/settings.webp" alt=""></a>
-        <p>How to set up and use the cheat codes in Dolphin, the GameCube emulator.</p>
-        <footer class="more"><a href="setup.php">Read More &raquo;</a></footer>
-      </article>
-      <!-- article 2 -->
-      <article class="one_half last">
-        <h2>Info & Tips</h2>
-        <a href="info-driving-tips.php"><img src="images/info.webp" alt=""></a>
-        <p>Driving tips, best cars, and explanation of Race Crash Total and Big Crash.</p>
-        <footer class="more"><a href="info-driving-tips.php">Read More &raquo;</a></footer>
-      </article>
+      <a href="setup.php">
+	    <!-- article 1 -->
+		<article class="one_half">
+		  <h2>Setup & use of the cheat codes</h2>
+		  <img src="images/settings.webp" alt="">
+		  <p>How to set up and use the cheat codes in Dolphin, the GameCube emulator.</p>
+		  <footer class="more">Read More &raquo;</footer>
+		</article>
+      </a>
+      <a href="info-driving-tips.php">
+		<!-- article 2 -->
+		<article class="one_half last">
+		  <h2>Info & Tips</h2>
+		  <img src="images/info.webp" alt="">
+		  <p>Driving tips, best cars, and explanation of Race Crash Total and Big Crash.</p>
+		  <footer class="more">Read More &raquo;</footer>
+		</article>
+	  </a>
       <!-- article 3 
       <article class="one_third lastbox">
         <h2>Rules</h2>
