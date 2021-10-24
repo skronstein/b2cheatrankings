@@ -105,7 +105,7 @@ blockquote:after, q:after{content:' „'; font-size:26px; line-height:0;}
 #container #services article{}
 #container #services article h2{font-size:14px; margin-bottom:15px;}
 #container #services article p{margin:0; padding:0;}
-#container #services article img{float:left; width:80px; height:80px; margin:0 10px 10px 0; padding:4px; border:1px solid #DEDEDE;}
+#container #services article img{float:left; width:80px; height:80px; margin:0 10px 10px 0; padding:4px;}
 #container #services article footer{margin:10px 0 0 0;}
 
 /*----------------------------------------------Footer-------------------------------------*/
