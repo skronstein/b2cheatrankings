@@ -27,12 +27,12 @@
    <div>
       <img src="images/tracks-large/<?php echo $imageArray[$track-1]?>.png" alt="">
    </div>
-   <div class="tracktext"><div class="external"><div class="middle"><div class="internal"><h2><?php
+   <div class="tracktext"><div class="external"><div class="middle"><div class="internal"><?php
       $sql_command = "SELECT name FROM tracks WHERE id = $track";
       $sql_result = mysqli_query($conn, $sql_command);
       $trackName = mysqli_fetch_all($sql_result, MYSQLI_ASSOC);
       echo $trackName[0]['name'];
-   ?></h2></div></div></div></div>
+   ?></div></div></div></div>
    <div class="trackfilters">
       <div class="filtergrid">
          <div><button class="btn btn-lg btn-primary" id="traffic" onClick='toggleTraffic(); updateHalf()'>Traffic: Off</button></div>
