@@ -30,6 +30,17 @@ If you hold A without Y above 160mph, your car will rapidly decelerate to about 
 <li>Hotrod: Excellent acceleration, almost as fast as the Gangster. hard to flip over, even when accelerating over bumps. I did 698mph with turbostart on Big Surf Grove.</li>
 <li>Custom Coupe: Average acceleration. When going over bumps at high speeds, the car sinks into the ground more than other cars do, so you spend less time in the air, which means you can start accelerating again sooner after the jump. This is most noticeable on some parts of Big Surf Shores, and on the bumps near the beginning of 88 Interchange. The highest speed I've attained with turbstart was 442mph.</li>
 </ul>
+
+
+<h2>Credits</h2>
+
+<p>The Disable Speed Restriction and Super Acceleration codes are originally from <a href="https://web.archive.org/web/20070225032326/http://arcentral.net/Codes/NTSC/Burnout_2.php">arcentral.net</a>
+<br>
+The <a href="https://crashmode.forumotion.com/t57-motion-blur-removal-ar-code">motion blur removal code</a> was created by me, sparker599.
+<br>
+icons from iconfinder.com</p>
+
+
 <?php include("footer.php");?>
 
 </div>
