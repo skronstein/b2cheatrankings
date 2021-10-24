@@ -48,6 +48,8 @@ div.wrapper{display:block; width:1170px; margin:0 auto; padding:0; text-align:le
 
 /*----------------------------------------------Generalise-------------------------------------*/
 
+.text a{color:#ff9900;}
+
 #header, #container, #footer{display:block; width:1170px;}
 
 nav ul{margin:0; padding:0; list-style:none;}
