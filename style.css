@@ -32,12 +32,15 @@ table {
 }
 .tracktext {
     width: 680px;
-    font-size: 30pt;
+    font-size: 20pt;
     text-align: center;
 }
 .trackfilters {
     width: 100%;
     text-align: left;
+}
+button{
+	font-size: 17px;
 }
 @media (max-width: 1175px) {
     .filtergrid {
