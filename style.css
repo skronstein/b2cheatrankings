@@ -31,7 +31,7 @@ table {
     display: flex;
 }
 .tracktext {
-    width: 680px;
+    width: 880px;
     font-size: 20pt;
     text-align: center;
 }
@@ -46,9 +46,10 @@ button{
     .filtergrid {
         display: grid;
         grid-template-rows: 50% 50%;
+	    text-align: left;
     }
     button {
-        width: 316px;
+        width: 256px;
         height: 50px;
         margin-bottom: 10px;
     }
@@ -57,10 +58,12 @@ button{
     .filtergrid {
         display: grid;
         grid-template-columns: 50% 50%;
+	    text-align: left;
     }
     button {
-        width: 316px;
-        height: 128px;
+        width: 256px;
+        height: 100px;
+        margin: 14px 0 14px 0;
     }
 }
 .external {
@@ -68,6 +71,7 @@ button{
     position: relative;
     height: 100%;
     width: 95%;
+    margin-left: 10px;
 }
 .middle {
     display: table-cell;
