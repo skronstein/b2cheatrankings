@@ -20,6 +20,7 @@
       </ul>
     </nav>
   </header>
+  <div class="track-selector">
 <?php
 	require('images.php');
 	$arraylength = 15;
@@ -30,3 +31,4 @@
 		echo "</a>";
 	}
 ?>
+  </div>
