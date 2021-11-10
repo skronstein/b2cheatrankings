@@ -26,7 +26,7 @@
 	for($itr=1 ; $itr <= $arraylength ; $itr++){
 		echo "<a href = track.php?track=$itr>";
 		$imageName = $imageArray[$itr-1] . ".png";
-		echo "<img src = images/" . $imageName . ">";
+		echo "<img src = images/tracks-large/" . $imageName . ">";
 		echo "</a>";
 	}
 ?>
