@@ -1,7 +1,7 @@
 # Introduction
 This website works with a MySQL database to store and display records for the game Burnout 2: Point of Impact.
-![homepage](https://user-images.githubusercontent.com/34139270/125173495-8b08d580-e174-11eb-8a63-a9cd21d19c59.png)
-![trackpage](https://user-images.githubusercontent.com/34139270/125173409-0fa72400-e174-11eb-868a-664561566fc3.png)
+![homepage](https://user-images.githubusercontent.com/34139270/141879969-f9f522b5-00e1-40f4-a946-8cc7e44ad8a2.png)
+![trackpage](https://user-images.githubusercontent.com/34139270/141879997-04df869e-84e1-438c-9b7c-573d10b1831f.png)
 # How to host the website
 1. Copy the repository to a folder on a server running PHP and MySQL.
 2. Copy the config.php file to the folder one above where the rest of the repo was cloned to.
