@@ -63,8 +63,10 @@ blockquote, q{display:block; padding:8px 10px; color:#979797; background-color:#
 blockquote:before, q:before{content:'“ '; font-size:26px;}
 blockquote:after, q:after{content:' „'; font-size:26px; line-height:0;}
 
+
+
 .one_third, .two_third, .three_third{display:block; float:left; margin:0 20px 0 0;}
-.one_third{width:300px;}
+.one_third{width:366px;}
 .two_third{width:770px;}
 .three_third{width:1170px; float:none; margin-right:0; clear:both;}
 .lastbox{margin-right:0;}

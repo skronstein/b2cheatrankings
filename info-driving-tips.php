@@ -38,7 +38,6 @@ If you hold A without Y above 160mph, your car will rapidly decelerate to about 
 <br>
 The <a href="https://crashmode.forumotion.com/t57-motion-blur-removal-ar-code">motion blur removal code</a> was created by me, sparker599.
 <br>
-icons from iconfinder.com</p>
 
 
 <?php include("footer.php");?>
