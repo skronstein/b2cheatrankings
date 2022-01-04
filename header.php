@@ -21,6 +21,7 @@
     </nav>
   </header>
   <div class="track-selector">
+	  <div class="track-selector-1">
 <?php
 	require('images.php');
 	$arraylength = 15;
@@ -29,6 +30,11 @@
 		$imageName = $imageArray[$itr-1] . ".png";
 		echo "<img src = images/tracks-large/" . $imageName . ">";
 		echo "</a>";
+		if($itr == 8){
+			echo "</div>";
+			echo '<div class="track-selector-2">';
+		}
 	}
 ?>
+	  </div>
   </div>

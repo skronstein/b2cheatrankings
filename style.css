@@ -43,6 +43,11 @@ table {
 button{
 	font-size: 17px;
 }
+.track-selector {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
 @media (max-width: 1175px) {
     .filtergrid {
         display: grid;
@@ -54,6 +59,12 @@ button{
         height: 50px;
         margin-bottom: 10px;
     }
+	.track-selector img {
+		width: 110px;
+	}
+	.track-selector {
+		flex-direction: column;
+	}
 }
 @media (min-width: 1176px) {
     .filtergrid {
@@ -66,6 +77,12 @@ button{
         height: 100px;
         margin: 14px 0 14px 0;
     }
+	.track-selector img {
+		width: 78px;
+	}
+	.track-selector {
+		flex-direction: row;
+	}
 }
 .external {
     display: table;
@@ -127,7 +144,4 @@ article:hover{
 }
 p{
 	color: #979797;
-}
-.track-selector img {
-	width: 78px;
 }
