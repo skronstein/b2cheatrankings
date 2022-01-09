@@ -31,7 +31,7 @@ for the NTSC version of the game, copy and paste the following codes into the te
 <br>$Motion Blur Removal
 <br>00305D5C 00000000
 <br><br>
-<p>In Burnout 2's in-game settings, set the controller config to type B (R = gas, A = boost)</p>
+<p>In Burnout 2's in-game settings, set the controller config to type B (R = gas, A = boost)</p><br>
 
 
 <h2>Optional steps</h2>
