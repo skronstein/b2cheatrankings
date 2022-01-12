@@ -22,7 +22,7 @@
         foreach($scores as $score): ?>
             <tr>
                 <td><img src="images/medals/<?php echo $rank++;?>.png"></td>
-                <td><?php
+                <td class="width-240"><?php
                     if($order == "ASC") { // we are outputting a race time
                         $seconds = $score['score'] / 1000;
                         $minutes = floor($seconds / 60);
@@ -35,13 +35,13 @@
                     }
                     else { echo number_format(htmlentities($score['score']), 0,".",","); }
                 ?></td>
-                <td><?php echo htmlentities($score['player']); ?></td>
-                <td><?php
+                <td class="width-240"><?php echo htmlentities($score['player']); ?></td>
+                <td class="width-240"><?php
                     $unixtime = strtotime(htmlentities($score['date_acheived']));
                     echo date("F j, Y", $unixtime);
                 ?></td>
                 <td><img width=75px src="images/cars/<?php echo htmlentities($score['car']); ?>.png"></td>
-                <td><?php echo $score['system']; ?></td>
+                <td class="width-240"><?php echo $score['system']; ?></td>
                 <td><a href="<?php echo htmlentities($score['proof']); ?>"><img src="images/logos/youtube2.png"></a></td>
             </tr>
         <?php endforeach; ?>
