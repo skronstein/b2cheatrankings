@@ -10,12 +10,9 @@
 <body>
 <div class="wrapper row1">
   <header id="header" class="clear">
-    <div id="hgroup">
-      <h1><a href="index.php">Home</a></h1>
-      <!-- <h2>Free HTML5 Website Template</h2> -->
-    </div>
     <nav>
       <ul>
+        <li><a href="./">Home</a></li>
         <li><a href="https://www.youtube.com/playlist?list=PLZRlKCDJDJ95yqddkgT-okO-9LD7enMSu">Videos</a></li>
       </ul>
     </nav>
