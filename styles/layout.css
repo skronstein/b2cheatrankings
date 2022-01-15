@@ -83,7 +83,7 @@ blockquote:after, q:after{content:' „'; font-size:26px; line-height:0;}
 #header #hgroup h1{font-size:36px;}
 #header #hgroup h2{font-size:13px;}
 
-#header nav{display:block; float:right; margin:20px 0 0 0; padding:20px 0;}
+#header nav{display:block; float:left; margin:20px 0 0 0; padding:20px 0;}
 #header nav ul{}
 #header nav li{display:inline; margin-right:25px; text-transform:uppercase;}
 #header nav li.last{margin-right:0;}
