@@ -76,7 +76,7 @@ blockquote:after, q:after{content:' „'; font-size:26px; line-height:0;}
 
 /*----------------------------------------------Header-------------------------------------*/
 
-#header{}
+#header{margin-left: 30px;}
 
 #header #hgroup{padding:20px 0 0 0; float:left;}
 #header #hgroup h1, #header #hgroup h2{font-weight:normal; text-transform:none;}
