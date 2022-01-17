@@ -107,8 +107,8 @@ blockquote:after, q:after{content:' „'; font-size:26px; line-height:0;}
 
 #container #services{margin-bottom:50px; line-height:1.6em;}
 #container #services article{}
-#container #services article h2{font-size:14px; margin-bottom:15px;}
-#container #services article p{margin:0; padding:0;}
+#container #services article h2{font-size:24px; margin-bottom:15px;}
+#container #services article p{font-size: 24px; margin:0; padding:0;}
 #container #services article img{float:left; width:80px; height:80px; margin:0 10px 10px 0; padding:4px;}
 #container #services article footer{margin:10px 0 0 0;}
 

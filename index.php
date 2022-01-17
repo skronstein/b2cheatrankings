@@ -16,7 +16,7 @@
       <a href="setup.php">
 	    <!-- article 1 -->
 		<article class="one_third">
-		  <h2>Setup & use of the cheat codes</h2>
+		  <h2>Setup</h2>
 		  <img src="images/settings-3-icon.png" alt="">
 		  <p>How to set up and use the cheat codes in Dolphin, the GameCube emulator.</p>
 		  <footer class="more">Read More &raquo;</footer>
@@ -25,7 +25,7 @@
       <a href="info-driving-tips.php">
 		<!-- article 2 -->
 		<article class="one_third">
-		  <h2>Info & Tips</h2>
+		  <h2>Info</h2>
 		  <img src="images/info-icon.png" alt="">
 		  <p>Driving tips, best cars, and explanation of Race Crash Total and Big Crash.</p>
 		  <footer class="more">Read More &raquo;</footer>
@@ -34,7 +34,7 @@
       <a href="rules.php">
 		<!-- article 3 -->
 		<article class="one_third last">
-		  <h2>Contact & Submission</h2>
+		  <h2>Contact</h2>
 		  <img src="images/email-2-icon.png" alt="">
 		  <p>Rules and instructions for submitting records.<br><br></p>
 		  <footer class="more">Read More &raquo;</footer>
