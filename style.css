@@ -59,6 +59,9 @@ table {
 	.tracktext {
 		font-size: 40px;
 	}
+	td img {
+		width: 120px;
+	}
 }
 @media (min-width: 1176px) {
     body {
