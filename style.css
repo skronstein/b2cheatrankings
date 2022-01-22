@@ -50,8 +50,15 @@ table {
     button {
         font-size: 35px;
     }
-	.track-selector img {
-		width: 110px;
+	.track-selector-1 img {
+		width: 12.5%;
+	}
+	.track-selector-2 img {
+		width: 14.285%;
+		/* To make the sizes of the icons in the upper and lower rows equal
+		I had to use 12.5% * 8/7 or 14.285%
+		because the lower row is 7/8 the width of the upper row
+		due to only having 7 tracks insted of 8*/
 	}
 	.track-selector {
 		flex-direction: column;
