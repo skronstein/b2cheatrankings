@@ -62,6 +62,7 @@ table {
 	}
 	.track-selector {
 		flex-direction: column;
+		width: 1200px;
 	}
 	.tracktext {
 		font-size: 40px;
