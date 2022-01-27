@@ -37,10 +37,10 @@ for the NTSC version of the game, copy and paste the following codes into the te
 <h2>Optional steps</h2>
 
 <p>In Burnout 2's cheats menu, use Free Run if you want to disable traffic.<br>
-I'd recommend this, especially while getting used to driving with Disable Speed Restriction.</p>
+I'd recommend using this, especially while getting used to driving with the Super Acceleration and Disable Speed Restriction codes.</p>
 <p>If you want to keep motion blur enabled, right click on the game in Dolphin -> AR Codes -> uncheck Motion Blur Removal.</p>
-<p>If you don't want to complete the game again to unlock all cars, you can use my <a href="https://gamefaqs.gamespot.com/gamecube/561501-burnout-2-point-of-impact/saves">save file</a>, which has everything unlocked, and has clean scoreboards.
-Copy the gci file into the Card A folder before starting Dolphin.</p>
+<p>If you want to have all the cars unlocked from the start, you can use my <a href="https://gamefaqs.gamespot.com/gamecube/561501-burnout-2-point-of-impact/saves">save file</a>, which has everything unlocked, and has clean scoreboards.
+To use a .gci save file, copy the gci file into your "Dolphin/User/GC/USA/Card A" folder before starting Dolphin.</p>
 
 
 
