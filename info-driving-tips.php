@@ -32,7 +32,7 @@ If you hold A without Y above 160mph, your car will rapidly decelerate to about 
 </ul>
 
 
-<h2>Credits</h2>
+<h1>Credits</h1>
 
 <p>The Disable Speed Restriction and Super Acceleration codes are originally from <a href="https://web.archive.org/web/20070225032326/http://arcentral.net/Codes/NTSC/Burnout_2.php">arcentral.net</a>
 <br>
