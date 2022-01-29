@@ -26,7 +26,6 @@
 <li>Japanese Muscle: Best for tracks with many tight curves, like Sunrise Valley. Average acceleration. Sometimes flips when accelerating over bumps such as sidewalks.</li>
 <li>Gangster: Best acceleration of any car when using Disable Speed Restriction, especially past 350mph. However, tires have less grip than most other cars.</li>
 <li>Hotrod: Excellent acceleration, almost as fast as the Gangster. Hard to flip over, even when accelerating over bumps.</li>
-<li>Custom Coupe: Average acceleration. When going over bumps at high speeds, the car sinks into the ground more than other cars do, so you spend less time in the air, which means you can start accelerating again sooner after the jump. This is most noticeable on some parts of Big Surf Shores, and on the bumps near the beginning of 88 Interchange.</li>
 </ul>
 
 
