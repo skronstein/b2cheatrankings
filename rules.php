@@ -10,8 +10,8 @@
 Track
 <br>Time or score
 <br>The name you wish to use on the scoreboard
-<br>Date the record was acheived
-<br>Car used
+<br>The date the record was acheived
+<br>The car used
 <br>Whether it was done on a real console or on Dolphin, the Gamecube emulator
 <br>A link to a video of the record
 <br><br>

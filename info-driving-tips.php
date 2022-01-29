@@ -16,16 +16,16 @@
 <h1>What are Race Crash Total and Big Crash?</h1>
 
 <p>Both of these categories only apply to Single Races.</p>
-<p>Race Crash Total is the total amount of damage done to traffic during the race.</p>
-<p>Big Crash is the largest amount of damage from an individual crash during the race.</p>
+<p>Race Crash Total is the total damage done to traffic during the race.</p>
+<p>Big Crash is the largest damage from an individual crash during the race.</p>
 
 
-<h1>Best cars for use with Super Acceleration and Disable Speed Restriction:</h1>
+<h1>Best cars</h1>
 <ul>
-<li>Oval Racer: Very good acceleration. Best car for most tracks, especially ones with long straight areas. Easier to control and harder to flip than the Japanese Muscle.</li>
-<li>Japanese Muscle: Best for tracks with many tight curves, like Sunrise Valley. Average acceleration. Sometimes flips when accelerating over bumps such as sidewalks.</li>
-<li>Gangster: Best acceleration of any car when using Disable Speed Restriction, especially past 350mph. However, tires have less grip than most other cars.</li>
-<li>Hotrod: Excellent acceleration, almost as fast as the Gangster. Hard to flip over, even when accelerating over bumps.</li>
+<li>Oval Racer: Very good acceleration. Best car for racing on most tracks, especially ones with long straight areas. Easier to control and harder to flip than the Japanese Muscle.</li>
+<li>Japanese Muscle: Best for racing on tracks with many tight curves, like Sunrise Valley. Average acceleration. Sometimes flips when accelerating over bumps such as sidewalks.</li>
+<li>Gangster: Best acceleration of any car when using Disable Speed Restriction, especially past 350mph. However, the tires have less grip than most other cars.</li>
+<li>Hotrod: Excellent acceleration, almost as fast as the Gangster. Hard to flip over, even when accelerating over bumps. Very heavy; best car for Race Crash Total and Big Crash.</li>
 </ul>
 
 
