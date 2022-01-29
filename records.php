@@ -34,6 +34,9 @@
                         echo number_format($seconds,3,".",",");
                     }
                     else { echo number_format(htmlentities($score['score']), 0,".",","); }
+                    if($category == "big_airs"){
+                    	echo " ft";
+                    }
                 ?></td>
                 <td class="width-240"><?php echo htmlentities($score['player']); ?></td>
                 <td class="width-240"><?php
