@@ -9,7 +9,11 @@
         //for crash scores, don't check if records were done with traffic because they were all done with traffic
         if(strpos($category, 'crash') !== false) $traffic_string = "";
         else $traffic_string = "traffic = $traffic AND";
-        $sql_command = "SELECT score, car, player, `system`, proof, datetime_entered, date_acheived FROM records WHERE
+        $sql_command = "SELECT score, car, players.name, `system`, proof, datetime_entered, date_acheived
+            FROM records
+            INNER JOIN players
+            on players.id = records.player_id
+            WHERE
             track_id = $track AND
             reverse = $reverse AND
             $traffic_string
@@ -38,7 +42,7 @@
                     	echo " ft";
                     }
                 ?></td>
-                <td class="width-240"><?php echo htmlentities($score['player']); ?></td>
+                <td class="width-240"><?php echo htmlentities($score['name']); ?></td>
                 <td class="width-240"><?php
                     $unixtime = strtotime(htmlentities($score['date_acheived']));
                     echo date("F j, Y", $unixtime);
