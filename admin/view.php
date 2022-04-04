@@ -26,7 +26,9 @@
                         echo "<td>" . htmlspecialchars($row->id) . "</td>";
                         echo "<td>" . htmlspecialchars($row->score) . "</td>";
                         echo "<td>" . htmlspecialchars($row->reverse) . "</td>";
-                        echo "<td>" . htmlspecialchars($row->player) . "</td>";
+                        $player_id =  htmlspecialchars($row->player_id);
+                        
+                        echo "<td>" . 'todo' . "</td>";
                         echo "<td>" . htmlspecialchars($row->track_id) . "</td>";
                         echo "<td>" . htmlspecialchars($row->system) . "</td>";
                         echo "<td>" . htmlspecialchars($row->category) . "</td>";
