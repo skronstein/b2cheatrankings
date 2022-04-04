@@ -17,7 +17,7 @@ else $reverse = 0;
 if(isset($_POST['traffic']) && htmlentities($_POST['traffic'], ENT_QUOTES) == 'on') $traffic = 1;
 else $traffic = 0;
 $car = htmlentities($_POST['car'], ENT_QUOTES);
-$player = htmlentities($_POST['player'], ENT_QUOTES);
+$player_id = htmlentities($_POST['player_id'], ENT_QUOTES);
 $track = htmlentities($_POST['track'] + 1, ENT_QUOTES);
 $system = htmlentities($_POST['system'], ENT_QUOTES);
 $proof = htmlentities($_POST['proof'], ENT_QUOTES);
@@ -29,11 +29,11 @@ if(isset($_GET['id'])) {
         $id = $_GET['id'];
         if($stmt = $conn->prepare("UPDATE records SET
                 score = ?, reverse = ?, traffic = ?,
-                car = ?, player = ?,
+                car = ?, player_id = ?,
                 `system` = ?, proof = ?,
                 date_acheived = ?, track_id = ?, category = ?
                 WHERE id=?")){
-            $stmt->bind_param("iiisssssisi", $score, $reverse, $traffic, $car, $player, $system, $proof, $date_acheived, $track, $category, $id);
+            $stmt->bind_param("iiisisssisi", $score, $reverse, $traffic, $car, $player_id, $system, $proof, $date_acheived, $track, $category, $id);
             $stmt->execute();
             $stmt->close();
             header("Location: view.php");
@@ -44,10 +44,10 @@ if(isset($_GET['id'])) {
 } else {
     // inserting a new record
     if ($stmt = $conn->prepare("INSERT INTO records
-    (`id`, `score`, `reverse`, `traffic`, `car`, `player`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`, `category`)
+    (`id`, `score`, `reverse`, `traffic`, `car`, `player_id`, `system`, `proof`, `datetime_entered`, `date_acheived`, `track_id`, `category`)
     VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, current_timestamp(), ?, ?, ?)"))
     {
-        $stmt->bind_param("iiisssssis", $score, $reverse, $traffic, $car, $player, $system, $proof, $date_acheived, $track, $category);
+        $stmt->bind_param("iiisisssis", $score, $reverse, $traffic, $car, $player_id, $system, $proof, $date_acheived, $track, $category);
         $stmt->execute();
         $stmt->close();
     } else {

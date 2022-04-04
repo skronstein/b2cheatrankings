@@ -6,7 +6,7 @@
                         $reverse = '',
                         $traffic = '',
                         $car = '',
-                        $player = '',
+                        $player_id = '',
                         $track = '',
                         $system = '',
                         $proof = '',
@@ -51,7 +51,7 @@
                     <input type="checkbox" name="reverse" <?php echo $reverse ? "checked":""?> > Reverse<br>
                     <input type="checkbox" name="traffic" <?php echo $traffic ? "checked":""?> > Traffic<br>
                     <input type="text" name="car" value="<?php echo $car?>"> Car<br>
-                    <input type="text" name="player" value="<?php echo $player?>"> Player<br>
+                    <input type="text" name="player_id" value="<?php echo $player_id?>"> player_id<br>
 
                     <select name="track" id="track" value="Sunrise Valley Downtown"><?php
                         include('config/db_connect.php');
