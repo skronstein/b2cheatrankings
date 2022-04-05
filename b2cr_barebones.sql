@@ -1,151 +1,192 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
+-- MySQL dump 10.13  Distrib 8.0.23, for Linux (x86_64)
 --
--- Host: localhost
--- Generation Time: Jun 26, 2021 at 08:02 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.9
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: b2cr_barebones
+-- ------------------------------------------------------
+-- Server version	8.0.23
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Database: `b2cr_test1`
+-- Table structure for table `countries`
 --
 
--- --------------------------------------------------------
+DROP TABLE IF EXISTS `countries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `countries` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `name_url` varchar(50) NOT NULL,
+  `abr` varchar(3) NOT NULL,
+  `iso` varchar(2) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `un_countries_1` (`name`),
+  UNIQUE KEY `un_countries_2` (`abr`),
+  UNIQUE KEY `un_countries_3` (`iso`),
+  KEY `in_countries` (`name_url`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `countries`
+--
+
+LOCK TABLES `countries` WRITE;
+/*!40000 ALTER TABLE `countries` DISABLE KEYS */;
+INSERT INTO `countries` VALUES (1,'Iceland','Iceland','ISL','IS'),(2,'United States','United-States','USA','US'),(3,'France','France','FRA','FR'),(4,'Germany','Germany','GER','DE'),(5,'Great Britain','Great-Britain','GBR','GB'),(6,'Canada','Canada','CAN','CA'),(7,'Netherlands','Netherlands','NLD','NL'),(8,'Denmark','Denmark','DEN','DK'),(9,'Mexico','Mexico','MEX','MX'),(10,'Belgium','Belgium','BEL','BE'),(11,'Australia','Australia','AUS','AU'),(12,'Japan','Japan','JPN','JP'),(13,'Poland','Poland','POL','PL'),(14,'Taiwan','Taiwan','TWN','TW'),(15,'Sweden','Sweden','SWE','SE'),(16,'Austria','Austria','AUT','AT'),(17,'Croatia','Croatia','CRO','HR'),(18,'Spain','Spain','ESP','ES'),(19,'Finland','Finland','FIN','fi');
+/*!40000 ALTER TABLE `countries` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `players`
+--
+
+DROP TABLE IF EXISTS `players`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `players` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `name_url` varchar(50) NOT NULL,
+  `country` int unsigned NOT NULL,
+  `notes` text,
+  `total` bigint unsigned NOT NULL DEFAULT '0',
+  `total_rank` int unsigned DEFAULT NULL,
+  `avg_pos` decimal(5,3) NOT NULL DEFAULT '30.000',
+  `avg_pos_rank` int unsigned DEFAULT NULL,
+  `avg_percent` decimal(5,2) NOT NULL DEFAULT '0.00',
+  `avg_percent_rank` int unsigned DEFAULT NULL,
+  `avg_stars` decimal(3,1) NOT NULL DEFAULT '0.0',
+  `avg_stars_rank` int unsigned DEFAULT NULL,
+  `wcr_channel` varchar(255) DEFAULT NULL,
+  `personnal_channel` varchar(255) DEFAULT NULL,
+  `xbl_total` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `un_players` (`name`),
+  UNIQUE KEY `un_players_2` (`name_url`),
+  KEY `in_players` (`name_url`),
+  KEY `country` (`country`),
+  CONSTRAINT `players_ibfk_1` FOREIGN KEY (`country`) REFERENCES `countries` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=328 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `players`
+--
+
+LOCK TABLES `players` WRITE;
+/*!40000 ALTER TABLE `players` DISABLE KEYS */;
+INSERT INTO `players` VALUES (1,'Siggi','Siggi',1,NULL,456092736,83,30.000,191,1.64,209,0.2,152,NULL,NULL,0),(2,'hddr3','hddr3',2,'The 50hz mode on the NTSC Xbox was enabled via the Enigmah Video Mode Switcher.',4784581870,10,17.067,12,53.96,10,6.8,11,'https://www.youtube.com/playlist?list=PLA7D1ADCBC9FB9CA2','https://www.youtube.com/user/hddr3',0),(3,'Drew22werD','Drew22werD',2,NULL,6064246572,4,10.733,7,64.08,5,8.0,5,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWJP0nLyehMoGJs0bh5pdGyu','https://www.youtube.com/channel/UCzFpl5pa56ILGnbWlYP364w',0),(4,'NotYourCarNYC','NotYourCarNYC',2,NULL,3668235586,19,25.067,21,42.84,19,5.1,19,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWL8xUWxdM8X05z9nHDfbssS','https://www.youtube.com/user/hysteria544',0),(5,'DEADLY 1','DEADLY-1',2,NULL,3087954508,30,27.100,28,34.95,35,3.6,35,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWJJNwySELzFlk6hPAQIJLj1','https://www.youtube.com/user/DEADLEY10',0),(6,'Joe Crash','Joe-Crash',2,NULL,3394817406,23,25.300,23,43.50,17,5.1,19,NULL,NULL,0),(7,'beard295','beard295',2,NULL,3234039924,28,26.100,25,39.32,28,4.4,27,'http://www.youtube.com/playlist?list=PL0jsgAa9qtWL27-Km6I72VqnU-64usNFY','https://www.youtube.com/user/beard295',0),(8,'tylivia4','tylivia4',2,NULL,302611232,97,29.333,80,2.00,163,0.3,96,NULL,'https://www.youtube.com/user/tylivia4',0),(9,'Eliminator','Eliminator',2,NULL,3027215314,34,27.900,32,36.43,30,3.8,32,NULL,'https://www.youtube.com/user/eliminator123456789',0),(10,'inu110493','inu110493',2,NULL,880661788,65,29.267,69,7.39,57,0.8,55,NULL,'https://www.youtube.com/user/inu110493',0),(11,'ExboxJim','ExboxJim',2,'Some PRs can be found here: <a target=\"_blank\" href=\"https://www.youtube.com/playlist?list=PL4F99A8B7BBB36923\">Xbox Live scoreboards vids</a>.',2570466400,46,29.267,69,3.40,86,0.4,78,NULL,NULL,1),(12,'zman6966','zman6966',2,'Some PRs can be found here: <a target=\"_blank\" href=\"https://www.youtube.com/playlist?list=PL4F99A8B7BBB36923\">Xbox Live scoreboards vids</a>.',2518971040,48,28.833,42,4.16,72,0.7,59,NULL,NULL,1),(13,'Salminio','Salminio',2,'Some PRs can be found here: <a target=\"_blank\" href=\"https://www.youtube.com/playlist?list=PL4F99A8B7BBB36923\">Xbox Live scoreboards vids</a>.',2346335360,57,29.667,147,5.20,64,0.6,63,NULL,NULL,1),(14,'Jsambz','Jsambz',2,NULL,891740656,64,28.767,41,4.66,67,0.8,55,NULL,NULL,0),(15,'MC unit','MC-unit',2,NULL,188378976,143,29.633,139,1.01,278,0.2,152,NULL,NULL,0),(16,'hibityhupla','hibityhupla',2,NULL,427614984,85,29.433,105,5.32,63,0.5,69,NULL,NULL,0),(17,'Saryrr','Saryrr',2,NULL,204409888,125,29.800,180,1.65,207,0.1,267,NULL,NULL,0),(18,'VORTEX WARRIOR','VORTEX-WARRIOR',2,NULL,556594048,79,29.667,147,2.00,163,0.3,96,NULL,NULL,0),(19,'Litobirds cousin','Litobirds-cousin',2,NULL,0,321,30.000,191,0.00,321,0.0,319,NULL,NULL,0),(20,'Juice','Juice',2,NULL,0,321,30.000,191,0.00,321,0.0,319,NULL,NULL,0),(21,'NecroAsh','NecroAsh',2,NULL,306971968,94,29.333,80,2.63,108,0.3,96,NULL,NULL,0),(22,'FrankyFiguro','FrankyFiguro',2,NULL,292143776,101,29.500,114,2.51,113,0.3,96,NULL,NULL,0),(23,'BUFFSWINGER','BUFFSWINGER',2,NULL,230947072,110,30.000,191,1.98,168,0.2,152,NULL,NULL,0),(24,'The Malc','The-Malc',2,NULL,263785776,104,29.533,120,1.74,197,0.3,96,NULL,NULL,0),(25,'Sic Nic RAGE','Sic-Nic-RAGE',2,NULL,464457168,82,29.067,49,2.68,103,0.5,69,NULL,NULL,0),(26,'greenforest','greenforest',2,NULL,204283648,126,30.000,191,1.35,239,0.2,152,NULL,NULL,0),(27,'InnerPatman','InnerPatman',2,NULL,116986016,214,29.333,80,2.30,127,0.3,96,NULL,NULL,0),(28,'Lieutelant','Lieutelant',2,NULL,296946464,99,30.000,191,3.06,91,0.3,96,NULL,NULL,0),(29,'SelectDeadfred','SelectDeadfred',2,NULL,67612664,282,29.100,51,2.51,113,0.3,96,NULL,NULL,0),(30,'Ilrip Yercokov','Ilrip-Yercokov',2,NULL,113851584,219,29.167,57,2.76,96,0.4,78,NULL,NULL,0),(31,'HAYABUSA 3303','HAYABUSA-3303',2,NULL,43265188,307,29.367,91,1.61,215,0.2,152,NULL,NULL,0),(32,'Cpt Klos','Cpt-Klos',2,NULL,32679820,314,29.633,139,1.21,256,0.2,152,NULL,NULL,0),(33,'H3L1X','H3L1X',2,NULL,191255948,138,29.667,147,1.93,181,0.4,78,NULL,NULL,0),(34,'ROACH1','ROACH1',2,NULL,161859232,166,30.000,191,1.88,188,0.2,152,NULL,NULL,0),(35,'THEDARKMASTER','THEDARKMASTER',2,NULL,26848170,317,30.000,191,1.00,281,0.2,152,NULL,NULL,0),(36,'Jaded1','Jaded1',2,NULL,484465464,80,29.100,51,4.42,68,0.7,59,NULL,NULL,0),(37,'HAIRY N BALDGUY','HAIRY-N-BALDGUY',2,NULL,98336592,247,30.000,191,1.93,181,0.2,152,NULL,NULL,0),(38,'PACMAN 101','PACMAN-101',2,NULL,163435540,163,30.000,191,4.00,75,0.4,78,NULL,NULL,0),(39,'bigbonez420','bigbonez420',2,NULL,116038400,215,29.400,98,2.28,132,0.3,96,NULL,NULL,0),(40,'blackgt93','blackgt93',2,NULL,109174384,230,29.600,135,2.15,147,0.2,152,NULL,NULL,0),(41,'Skeeve23','Skeeve23',2,NULL,108836144,232,29.667,147,2.14,148,0.2,152,NULL,NULL,0),(42,'Spanky Heath','Spanky-Heath',2,NULL,106325312,242,29.733,164,2.09,152,0.2,152,NULL,NULL,0),(43,'CrybabyCapone','CrybabyCapone',2,NULL,177201216,148,29.433,105,3.97,76,0.5,69,NULL,NULL,0),(44,'kangarohead','kangarohead',2,NULL,104156776,244,30.000,191,2.05,155,0.2,152,NULL,NULL,0),(45,'WhirlwindPizza','WhirlwindPizza',2,NULL,195484112,133,30.000,191,1.20,259,0.1,267,NULL,NULL,0),(46,'Postal Mike','Postal-Mike',2,NULL,164885552,161,30.000,191,1.01,278,0.1,267,NULL,NULL,0),(47,'Truth Warrior','Truth-Warrior',2,NULL,64546616,287,30.000,191,1.71,202,0.2,152,NULL,NULL,0),(48,'CossackRaider','CossackRaider',2,NULL,187547120,144,29.067,49,2.35,125,0.3,96,NULL,NULL,0),(49,'DriveThruGirl','DriveThruGirl',2,NULL,156401824,171,29.300,77,1.96,171,0.3,96,NULL,NULL,0),(50,'Ghost Trucker','Ghost-Trucker',2,NULL,152964960,175,29.400,98,1.91,186,0.3,96,NULL,NULL,0),(51,'Gameserfer0','Gameserfer0',2,NULL,126880032,202,29.800,180,1.59,219,0.2,152,NULL,NULL,0),(52,'Krustal','Krustal',2,NULL,78376616,268,30.000,191,1.46,230,0.1,267,NULL,NULL,0),(53,'Pma95','Pma95',2,NULL,78021000,269,30.000,191,1.45,232,0.1,267,NULL,NULL,0),(54,'Funk masta g','Funk-masta-g',2,NULL,77558040,271,30.000,191,1.45,232,0.1,267,NULL,NULL,0),(55,'DocDoobie','DocDoobie',2,NULL,198536808,129,28.667,39,3.60,80,0.5,69,NULL,NULL,0),(56,'FourX11gd','FourX11gd',2,NULL,106799504,240,29.433,105,1.72,201,0.3,96,NULL,NULL,0),(57,'Noodles1975','Noodles1975',2,NULL,62600076,290,30.000,191,1.01,278,0.1,267,NULL,NULL,0),(58,'PoPPyCaPPa','PoPPyCaPPa',2,NULL,111228880,227,29.600,135,2.73,100,0.2,152,NULL,NULL,0),(59,'Reflex27','Reflex27',2,NULL,108565264,233,30.000,191,2.66,104,0.2,152,NULL,NULL,0),(60,'TIMBERWOLF 888','TIMBERWOLF-888',2,NULL,108168328,236,30.000,191,2.65,105,0.2,152,NULL,NULL,0),(61,'Hunterhawk64','Hunterhawk64',2,NULL,395606816,89,29.033,46,5.99,60,0.6,63,NULL,NULL,0),(62,'gimmppy','gimmppy',2,NULL,107907856,237,30.000,191,2.65,105,0.2,152,NULL,NULL,0),(63,'Killer4Hire','Killer4Hire',2,NULL,107393344,238,30.000,191,2.64,107,0.2,152,NULL,NULL,0),(64,'Plastitrip','Plastitrip',2,NULL,226009504,114,29.167,57,2.62,110,0.3,96,NULL,NULL,0),(65,'DocMorbid','DocMorbid',2,NULL,210920448,122,29.267,69,2.45,118,0.3,96,NULL,NULL,0),(66,'Black Taurus','Black-Taurus',2,NULL,205121776,123,29.333,80,2.38,123,0.3,96,NULL,NULL,0),(67,'Defiant18','Defiant18',2,NULL,62600496,289,29.500,114,1.38,238,0.2,152,NULL,NULL,0),(68,'INN3RFEAR','INN3RFEAR',2,NULL,224544996,116,29.700,159,3.66,78,0.4,78,NULL,NULL,0),(69,'Rogue Mig','Rogue-Mig',2,NULL,55729604,301,30.000,191,1.22,254,0.1,267,NULL,NULL,0),(70,'Larutan','Larutan',2,NULL,68077424,281,29.667,147,2.24,137,0.3,96,NULL,NULL,0),(71,'OutlawTony','OutlawTony',2,NULL,60631824,293,30.000,191,2.00,163,0.2,152,NULL,NULL,0),(72,'poi dog1','poi-dog1',2,NULL,97608640,248,29.667,147,1.05,274,0.3,96,NULL,NULL,0),(73,'STiLLxFLY','STiLLxFLY',2,NULL,125761392,203,29.433,105,1.46,230,0.1,267,NULL,NULL,0),(74,'misere','misere',2,NULL,95850672,249,29.767,167,1.11,269,0.1,267,NULL,NULL,0),(75,'Iron Monkey 77','Iron-Monkey-77',2,NULL,91353408,252,29.800,180,1.06,272,0.1,267,NULL,NULL,0),(76,'LiKwiD20','LiKwiD20',2,NULL,85885072,255,30.000,191,0.99,282,0.1,267,NULL,NULL,0),(77,'JD 317','JD-317',2,NULL,84481360,257,30.000,191,0.98,283,0.1,267,NULL,NULL,0),(78,'HotCasper4u','HotCasper4u',2,NULL,81467228,263,30.000,191,0.94,287,0.1,267,NULL,NULL,0),(79,'ARZ','ARZ',2,NULL,213942112,119,29.200,60,2.29,130,0.3,96,NULL,NULL,0),(80,'John Clark R6','John-Clark-R6',2,NULL,124673312,204,29.767,167,1.34,240,0.2,152,NULL,NULL,0),(81,'Jagged Edge','Jagged-Edge',2,NULL,117454956,213,30.000,191,1.26,249,0.2,152,NULL,NULL,0),(82,'LFServant5','LFServant5',2,NULL,112899448,221,30.000,191,1.21,256,0.2,152,NULL,NULL,0),(83,'spade234s','spade234s',2,NULL,246780208,107,29.233,64,2.47,116,0.3,96,NULL,NULL,0),(84,'Bizarro Jeb','Bizarro-Jeb',2,NULL,196091280,132,29.633,139,1.97,170,0.2,152,NULL,NULL,0),(85,'Valdoro','Valdoro',2,NULL,194753408,134,29.667,147,1.95,177,0.2,152,NULL,NULL,0),(86,'Gazelle','Gazelle',2,NULL,149676512,178,29.333,80,2.12,149,0.3,96,NULL,NULL,0),(87,'yousuckimnumber1','yousuckimnumber1',2,NULL,141298608,185,29.533,120,2.00,163,0.3,96,NULL,NULL,0),(88,'LeperKahn','LeperKahn',2,NULL,130342816,198,29.633,139,1.85,192,0.2,152,NULL,NULL,0),(89,'Predator 80','Predator-80',2,NULL,123508952,207,30.000,191,1.75,196,0.2,152,NULL,NULL,0),(90,'RAMJET KID','RAMJET-KID',2,NULL,164176368,162,29.500,114,2.09,152,0.4,78,NULL,NULL,0),(91,'Braedryk','Braedryk',2,NULL,83346560,259,29.533,120,1.21,256,0.2,152,NULL,NULL,0),(92,'Killa KoRn Kid','Killa-KoRn-Kid',2,NULL,119116064,211,30.000,191,1.81,194,0.3,96,NULL,NULL,0),(93,'G3N SMOR3S','G3N-SMOR3S',2,NULL,191167360,139,29.567,128,0.97,285,0.2,152,NULL,NULL,0),(94,'SKULLENOID','SKULLENOID',2,NULL,171951008,153,30.000,191,0.88,299,0.2,152,NULL,NULL,0),(95,'AK Punisher','AK-Punisher',2,NULL,169026752,154,30.000,191,0.86,300,0.2,152,NULL,NULL,0),(96,'Darkmaster74','Darkmaster74',2,NULL,166421536,157,30.000,191,0.85,304,0.2,152,NULL,NULL,0),(97,'schmave','schmave',2,NULL,2730503731,41,29.533,120,33.41,38,3.5,36,NULL,NULL,0),(98,'Dissonant Aria','Dissonant-Aria',2,NULL,111320408,226,29.267,69,2.01,160,0.3,96,NULL,NULL,0),(99,'thecozmo65','thecozmo65',2,NULL,108231968,235,29.367,91,1.96,171,0.2,152,NULL,NULL,0),(100,'D4A2NOK','D4A2NOK',2,NULL,91964520,251,29.767,167,1.66,205,0.2,152,NULL,NULL,0),(101,'Evil Eric','Evil-Eric',2,NULL,146834432,182,29.700,159,1.33,241,0.2,152,NULL,NULL,0),(102,'Rabbit0','Rabbit0',2,NULL,140255824,186,29.767,167,1.27,246,0.2,152,NULL,NULL,0),(103,'Supastashaw','Supastashaw',2,NULL,137412864,189,30.000,191,1.25,252,0.2,152,NULL,NULL,0),(104,'Viperish','Viperish',2,NULL,134808736,191,30.000,191,1.22,254,0.2,152,NULL,NULL,0),(105,'POPPEYE MD','POPPEYE-MD',2,NULL,127877056,199,30.000,191,1.16,263,0.2,152,NULL,NULL,0),(106,'YankeeMate','YankeeMate',2,NULL,133108136,194,30.000,191,0.71,315,0.2,152,NULL,NULL,0),(107,'SpiritxRubi','SpiritxRubi',2,NULL,71551600,277,29.267,69,1.60,217,0.3,96,NULL,NULL,0),(108,'Laserbait','Laserbait',2,NULL,0,321,30.000,191,0.00,321,0.0,319,NULL,NULL,0),(109,'drainey','drainey',2,NULL,227294048,111,30.000,191,1.95,177,0.2,152,NULL,NULL,0),(110,'REDDOF NONNAC','REDDOF-NONNAC',2,NULL,226975792,112,30.000,191,1.95,177,0.2,152,NULL,NULL,0),(111,'PriestBurner483','PriestBurner483',2,NULL,154040048,173,30.000,191,0.94,287,0.1,267,NULL,NULL,0),(112,'Zonepoet','Zonepoet',2,NULL,148804064,180,30.000,191,0.91,294,0.1,267,NULL,NULL,0),(113,'AceQ','AceQ',2,NULL,60845656,292,30.000,191,1.61,215,0.2,152,NULL,NULL,0),(114,'NoizeTrauma','NoizeTrauma',2,NULL,280280872,102,30.000,191,3.36,87,0.4,78,NULL,NULL,0),(115,'Sniper Guss','Sniper-Guss',2,NULL,74745924,273,30.000,191,1.39,237,0.1,267,NULL,NULL,0),(116,'Razor 66','Razor-66',2,NULL,45267648,305,30.000,191,0.67,317,0.1,267,NULL,NULL,0),(117,'Venom34','Venom34',2,NULL,43329968,306,30.000,191,0.64,318,0.1,267,NULL,NULL,0),(118,'WAR MACHINE 1','WAR-MACHINE-1',2,NULL,165665232,159,30.000,191,1.92,184,0.2,152,NULL,NULL,0),(119,'Niterider88','Niterider88',2,'Some PRs from his Total are unknown cause it wasn\'t possible to check all his PRs on Xbox LIve after the shut-down, only those ones which were placed within the Top 100.\r\n				It is known Niterider88 lost a 500 million + score on Out of Cintrol Tower/3 due to the Xbox Live Burnout scoreboards reset. It is unknown if he lost some more scores.',3031419520,33,28.167,34,32.79,39,3.4,37,NULL,NULL,1),(120,'JamdugAR','JamdugAR',2,NULL,53502820,303,30.000,191,1.18,261,0.1,267,NULL,NULL,0),(121,'Tucker316','Tucker316',2,NULL,60290338,294,30.000,191,1.99,167,0.2,152,NULL,NULL,0),(122,'Stryfe86','Stryfe86',2,NULL,59565264,296,30.000,191,1.96,171,0.2,152,NULL,NULL,0),(123,'RobGeezy','RobGeezy',2,NULL,58847616,299,30.000,191,1.94,180,0.2,152,NULL,NULL,0),(124,'Buttheadarama','Buttheadarama',2,NULL,79997712,265,30.000,191,0.86,300,0.2,152,NULL,NULL,0),(125,'Rhino83','Rhino83',2,NULL,73197288,275,30.000,191,0.79,309,0.1,267,NULL,NULL,0),(126,'Zoobly Dude','Zoobly-Dude',2,NULL,193592272,137,30.000,191,1.96,171,0.2,152,NULL,NULL,0),(127,'BubblegumKiller','BubblegumKiller',2,NULL,105937488,243,30.000,191,1.14,265,0.2,152,NULL,NULL,0),(128,'MATHRO','MATHRO',2,NULL,161967232,165,30.000,191,1.62,214,0.2,152,NULL,NULL,0),(129,'TinfoilRocket','TinfoilRocket',2,NULL,157369344,168,30.000,191,1.58,220,0.2,152,NULL,NULL,0),(130,'Kirkout69','Kirkout69',2,NULL,115860992,216,30.000,191,1.64,209,0.2,152,NULL,NULL,0),(131,'AS CID','AS-CID',2,NULL,59682856,295,30.000,191,0.86,300,0.1,267,NULL,NULL,0),(132,'theXtReMe1','theXtReMe1',2,NULL,81860376,262,30.000,191,1.88,188,0.2,152,NULL,NULL,0),(133,'Spriggan4','Spriggan4',2,NULL,84995312,256,30.000,191,1.54,225,0.1,267,NULL,NULL,0),(134,'Rvb Pvt Tucker','Rvb-Pvt-Tucker',2,NULL,108359712,234,30.000,191,0.98,283,0.1,267,NULL,NULL,0),(135,'RIC1','RIC1',2,'Some PRs can be found here: <a target=\"_blank\" href=\"https://www.youtube.com/playlist?list=PL4F99A8B7BBB36923\">Xbox Live scoreboards vids</a>.',2571687520,45,29.600,135,3.62,79,0.4,78,NULL,NULL,1),(136,'RonnieDobbs420','RonnieDobbs420',2,NULL,0,321,30.000,191,0.00,321,0.0,319,NULL,NULL,0),(137,'shadowbones14','shadowbones14',2,NULL,851275560,66,30.000,191,4.86,66,0.5,69,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWLhJoRhkErrSgAXaJ9u6qpm','https://www.youtube.com/channel/UCertxfc8Nc8o5qjru91X3GA',0),(138,'Anthony Burnout','Anthony-Burnout',3,'<center>Formerly known as Infinity A.B</center>',6218209768,3,5.233,3,71.19,3,9.0,3,'http://www.youtube.com/playlist?list=PL0jsgAa9qtWLTtDG5uojLK-S1b-pPeUbR','https://www.youtube.com/channel/UCSC8WDA7eiMcl4w0oFz-nMw',0),(139,'Traperac','Traperac',3,'<center>Formerly known as Ganon36</center>',4621884368,11,16.667,11,52.18,13,6.9,10,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWK9wxWC-6XsFX4vIhk10bEx',NULL,0),(140,'nikkos54','nikkos54',3,NULL,3394473920,24,27.000,27,39.85,25,4.3,28,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWKCRNFXvjjfiqrQJiAuAooz','https://www.youtube.com/user/nikkos54',0),(141,'micmic85','micmic85',3,NULL,3310300726,26,22.967,16,42.30,21,5.4,16,'https://www.youtube.com/playlist?list=PLD17F19EC1C677697','https://www.youtube.com/user/micmic85',0),(142,'CrissCrossCrush','CrissCrossCrush',3,NULL,3348938659,25,24.467,19,39.84,26,5.0,21,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWIjlZL8__S0hoXFoTC6IGqn','https://www.youtube.com/user/Drive637',0),(143,'Link69','Link69',3,NULL,2824067968,37,29.200,60,32.75,40,3.2,40,NULL,NULL,0),(144,'bh0ukk','bh0ukk',3,'The Total of his PRs is $2,781,876,968 but his real Total is $2,783,907,708. It isn\'t known which of those PRs isn\'t the correct one. Also a PR for Ridge Riot/8 is missing.',2783907708,38,29.033,46,33.57,37,3.3,38,NULL,'https://www.youtube.com/user/bh0ukk',1),(145,'Infinity G.R.','Infinity-G.R.',10,'<center>Formerly known as EtMerde A</center>',3597918732,20,23.133,17,43.23,18,5.4,16,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWJac1PmS5tQCOZVc5JNwixh','https://www.youtube.com/channel/UCYhCMuhX2XmbFP39YTPfFIw',0),(146,'HAL0MAN','HAL0MAN',3,NULL,3073239098,32,29.233,64,37.31,29,4.2,29,NULL,NULL,0),(147,'GalaxieKik','GalaxieKik',3,NULL,2996116818,35,27.567,30,35.57,34,3.9,31,NULL,NULL,0),(148,'Jean Emmanuel','Jean-Emmanuel',3,'A lot of his PRs from his Total are unknown cause it wasn\'t possible to check all of them on Xbox LIve after the shut-down, only those ones which were placed within the Top 100. It is known Jean Emmanuel lost a 500 million + score on Out of Control Tower/3 due to the Xbox Live Burnout scoreboards reset. It is unknown if he lost some more scores.\r\n\r\nSome PRs can be found here: <a target=\"_blank\" href=\"https://www.youtube.com/playlist?list=PL4F99A8B7BBB36923\">Xbox Live scoreboards vids</a>.',2566260480,47,29.133,54,9.98,53,1.0,52,NULL,NULL,1),(149,'GolfSilverman','GolfSilverman',3,NULL,139168736,188,30.000,191,0.74,314,0.2,152,NULL,NULL,0),(150,'magicbart','magicbart',3,NULL,356522472,91,29.800,180,4.27,70,0.4,78,NULL,NULL,0),(151,'Starloft','Starloft',3,NULL,124366736,205,29.233,64,2.45,118,0.3,96,NULL,NULL,0),(152,'XBLF RvB','XBLF-RvB',3,NULL,112861520,222,29.533,120,2.22,138,0.3,96,NULL,NULL,0),(153,'ffdek','ffdek',3,NULL,28436054,315,29.767,167,1.06,272,0.2,152,NULL,NULL,0),(154,'Urukai 59','Urukai-59',3,NULL,64939172,286,30.000,191,1.05,274,0.1,267,NULL,NULL,0),(155,'CriminelFire','CriminelFire',3,NULL,112079616,223,29.567,128,2.75,97,0.3,96,NULL,NULL,0),(156,'Lerhino','Lerhino',3,NULL,348930808,92,29.167,57,8.74,56,0.8,55,NULL,NULL,0),(157,'Deadstyle','Deadstyle',3,NULL,204450656,124,29.367,91,2.37,124,0.3,96,NULL,NULL,0),(158,'Darkel89','Darkel89',3,NULL,194621200,135,29.533,120,2.26,135,0.3,96,NULL,NULL,0),(159,'TEUTEU','TEUTEU',3,NULL,188999648,142,29.667,147,2.19,141,0.2,152,NULL,NULL,0),(160,'ED1GKORN','ED1GKORN',3,NULL,173187392,152,30.000,191,2.01,160,0.2,152,NULL,NULL,0),(161,'El Terino','El-Terino',3,NULL,663112848,71,29.400,98,4.36,69,0.6,63,NULL,NULL,0),(162,'TAZ ter','TAZ-ter',3,NULL,61197104,291,30.000,191,2.02,158,0.2,152,NULL,NULL,0),(163,'gamjee','gamjee',3,NULL,103861600,245,29.667,147,1.20,259,0.1,267,NULL,NULL,0),(164,'freedragoon','freedragoon',3,NULL,149608096,179,29.367,91,2.12,149,0.3,96,NULL,NULL,0),(165,'Dilly Touka','Dilly-Touka',3,NULL,70426320,279,30.000,191,1.02,277,0.2,152,NULL,NULL,0),(166,'CentaureValde','CentaureValde',3,NULL,93212880,250,30.000,191,1.83,193,0.2,152,NULL,NULL,0),(167,'XBLF SnakeX','XBLF-SnakeX',3,NULL,107213600,239,30.000,191,2.63,108,0.2,152,NULL,NULL,0),(168,'BEFAFLEX','BEFAFLEX',3,NULL,76981888,272,30.000,191,0.89,298,0.1,267,NULL,NULL,0),(169,'destiny51','destiny51',3,NULL,82601320,261,30.000,191,1.90,187,0.2,152,NULL,NULL,0),(170,'Natsume','Natsume',3,NULL,123629024,206,30.000,191,1.55,224,0.2,152,NULL,NULL,0),(171,'Perfectneo','Perfectneo',3,NULL,72739360,276,29.600,135,1.07,271,0.2,152,NULL,NULL,0),(172,'Maxi Crasher','Maxi-Crasher',3,NULL,3803169844,17,23.900,18,42.80,20,5.0,21,NULL,'https://www.youtube.com/channel/UCSZfhuNvKWvBUnsjo5NkPTA',0),(173,'Brainkiller007','Brainkiller007',4,NULL,6910984792,2,3.467,2,79.90,2,9.5,2,'https://www.youtube.com/user/Brainkiller007/playlists?shelf_id=12&view=50&sort=dd','http://www.youtube.com/brainkiller007',0),(174,'RedderBattle639','RedderBattle639',4,NULL,5613737369,6,16.333,9,59.45,8,7.1,9,'https://www.youtube.com/playlist?list=PL4FA077EF5C74F9F7','https://www.youtube.com/user/TheEddy360',0),(175,'Wave','Wave',4,NULL,4285762082,15,20.433,14,49.59,14,6.2,14,'https://www.youtube.com/playlist?list=PLDFF2FF99B14C7C1E','https://www.youtube.com/user/Bo2Wave',0),(176,'The Real MADMAX','The-Real-MADMAX',4,NULL,3299739454,27,26.967,26,39.53,27,4.5,25,NULL,NULL,0),(177,'Mahrla','Mahrla',4,NULL,249028704,105,30.000,191,3.55,83,0.2,152,NULL,'https://www.youtube.com/user/Mahrla',0),(178,'VIRTUALCHAOSFREAK','VIRTUALCHAOSFREAK',4,NULL,427204920,86,28.433,36,10.83,52,1.0,52,'https://www.youtube.com/playlist?list=PLF1072EFA874BC58D',NULL,0),(179,'Joyvalley','Joyvalley',4,NULL,2736634966,40,29.267,69,33.76,36,3.3,38,NULL,NULL,0),(180,'Jette','Jette',4,NULL,2434311912,51,29.333,80,31.00,41,2.8,42,NULL,NULL,0),(181,'JaegiMeister','JaegiMeister',4,'Some PRs can be found here: <a target=\"_blank\" href=\"https://www.youtube.com/playlist?list=PL4F99A8B7BBB36923\">Xbox Live scoreboards vids</a>.',2385323520,53,30.000,191,0.77,310,0.1,267,NULL,NULL,1),(182,'Lice','Lice',4,NULL,234711552,109,29.400,98,1.26,249,0.3,96,NULL,NULL,0),(183,'Amoxius','Amoxius',4,NULL,1953843868,59,29.200,60,18.47,49,1.8,48,NULL,NULL,0),(184,'RyuHayabusa22','RyuHayabusa22',4,NULL,305639392,96,29.367,91,2.62,110,0.3,96,NULL,NULL,0),(185,'dmXbox','dmXbox',4,NULL,133053354,195,30.000,191,3.59,82,0.4,78,NULL,NULL,0),(186,'Vito','Vito',4,NULL,132118152,196,29.567,128,1.65,207,0.2,152,NULL,NULL,0),(187,'Golden Prime','Golden-Prime',4,NULL,156811028,170,29.667,147,2.31,126,0.3,96,NULL,NULL,0),(188,'McMac19x','McMac19x',4,NULL,70156272,280,29.800,180,1.13,267,0.2,152,NULL,NULL,0),(189,'JulianB','JulianB',4,NULL,143051072,184,29.733,164,3.44,84,0.3,96,NULL,NULL,0),(190,'Darkplayer','Darkplayer',4,NULL,186360160,145,29.700,159,2.16,144,0.2,152,NULL,NULL,0),(191,'Cheech','Cheech',4,NULL,79645864,266,30.000,191,2.45,118,0.2,152,NULL,NULL,0),(192,'Big Kacka','Big-Kacka',4,NULL,65575560,284,29.833,189,2.16,144,0.2,152,NULL,NULL,0),(193,'Desperate','Desperate',4,NULL,154574128,172,29.400,98,1.66,205,0.2,152,NULL,NULL,0),(194,'TL','TL',4,NULL,133693560,193,29.567,128,1.43,234,0.2,152,NULL,NULL,0),(195,'Cool Wolle','Cool-Wolle',4,NULL,217523632,118,29.400,98,2.18,142,0.3,96,NULL,NULL,0),(196,'Boudens','Boudens',4,NULL,127001408,201,29.733,164,1.80,195,0.2,152,NULL,NULL,0),(197,'Low Rider 86','Low-Rider-86',4,NULL,165564544,160,30.000,191,0.84,306,0.2,152,NULL,NULL,0),(198,'Wolfsauge','Wolfsauge',4,NULL,53635164,302,30.000,191,1.18,261,0.1,267,NULL,NULL,0),(199,'HunterSL','HunterSL',4,NULL,120872916,209,30.000,191,3.25,89,0.2,152,NULL,NULL,0),(200,'SUPERCHECKER','SUPERCHECKER',4,NULL,71530960,278,30.000,191,2.20,139,0.1,267,NULL,NULL,0),(201,'X factor ReD 5','X-factor-ReD-5',4,NULL,79231184,267,30.000,191,0.92,293,0.1,267,NULL,NULL,0),(202,'Crashfreak','Crashfreak',4,NULL,7464043424,1,2.200,1,84.75,1,9.6,1,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWKt9l_is9-qXtiG_HaaTxoJ','https://www.youtube.com/channel/UCEyqxHFTBG0NY75NIfmb_IA',0),(203,'Timmey064','Timmey064',5,NULL,3414042922,22,24.833,20,41.76,23,4.9,23,'https://www.youtube.com/playlist?list=PLC5490AA796B11B0E','https://www.youtube.com/user/timmey064',0),(204,'Udderz','Udderz',5,NULL,2978876970,36,27.800,31,36.09,31,4.0,30,NULL,NULL,0),(205,'maco','maco',5,'The Total of his PRs is $2,447,610,706. It isn\'t known on which zones he has better PR.',2576139668,44,28.667,39,29.73,44,2.2,45,NULL,'https://www.youtube.com/user/maco1cma',1),(206,'Rock Denver','Rock-Denver',5,'On zones 22 and 30, he was missing top 100 for only 1 million and so these PRs weren\'t available.',3079203840,31,28.000,33,35.82,32,3.7,33,NULL,NULL,1),(207,'the lowndes','the-lowndes',5,'Some PRs are unknown cause his list was written after the XBL scoreboards shut-down so it wasn\'t possible to check scores outside the Top 100.',2744854720,39,29.000,45,21.61,47,2.0,46,NULL,NULL,1),(208,'Lurkio','Lurkio',5,'Some PRs are unknown cause his list was written after the XBL scoreboards shut-down so it wasn\'t possible to check scores outside the Top 100.',2652114240,42,28.933,43,18.50,48,1.9,47,NULL,NULL,1),(209,'Grizby','Grizby',5,NULL,2489827212,49,28.567,38,30.96,42,2.9,41,NULL,NULL,0),(210,'M u t t v1','M-u-t-t-v1',5,'Some PRs can be found here: <a target=\"_blank\" href=\"https://www.youtube.com/playlist?list=PL4F99A8B7BBB36923\">Xbox Live scoreboards vids</a>.',2395323520,52,29.767,167,2.75,97,0.4,78,NULL,NULL,1),(211,'Bivith','Bivith',5,'Some PRs can be found here: <a target=\"_blank\" href=\"https://www.youtube.com/playlist?list=PL4F99A8B7BBB36923\">Xbox Live scoreboards vids</a>.',2381136960,54,29.533,120,2.69,102,0.4,78,NULL,NULL,1),(212,'Turbosa','Turbosa',5,'Some PRs can be found here: <a target=\"_blank\" href=\"https://www.youtube.com/playlist?list=PL4F99A8B7BBB36923\">Xbox Live scoreboards vids</a>.',2363890080,56,30.000,191,3.05,92,0.3,96,NULL,NULL,1),(213,'Eduardo Cortez','Eduardo-Cortez',5,NULL,144377792,183,30.000,191,0.77,310,0.2,152,NULL,NULL,0),(214,'th3proph3t','th3proph3t',5,NULL,314121760,93,30.000,191,2.74,99,0.4,78,NULL,NULL,0),(215,'nonyeb','nonyeb',5,NULL,661884416,72,29.800,180,2.61,112,0.4,78,NULL,NULL,0),(216,'BuddyMuff','BuddyMuff',5,NULL,674798848,70,29.133,54,2.42,121,0.3,96,NULL,NULL,0),(217,'Primate','Primate',5,NULL,632602752,74,29.300,77,2.27,133,0.3,96,NULL,NULL,0),(218,'pell','pell',5,NULL,454630400,84,30.000,191,1.63,212,0.2,152,NULL,NULL,0),(219,'Danny998','Danny998',5,NULL,0,321,30.000,191,0.00,321,0.0,319,NULL,NULL,0),(220,'BDR Cyber','BDR-Cyber',5,NULL,121517536,208,29.267,69,2.39,122,0.3,96,NULL,NULL,0),(221,'Architect UK','Architect-UK',5,NULL,103353720,246,30.000,191,2.03,157,0.2,152,NULL,NULL,0),(222,'xANARCHYx','xANARCHYx',5,NULL,42427152,308,29.400,98,1.58,220,0.2,152,NULL,NULL,0),(223,'TeenageJay','TeenageJay',5,NULL,152683052,176,28.967,44,4.25,71,0.5,69,NULL,NULL,0),(224,'TheMightyBunny','TheMightyBunny',5,NULL,25224912,318,30.000,191,0.94,287,0.2,152,NULL,NULL,0),(225,'Amazing Me','Amazing-Me',5,NULL,24956108,319,30.000,191,0.93,291,0.1,267,NULL,NULL,0),(226,'Skull Bugery','Skull-Bugery',5,NULL,127854872,200,29.767,167,1.60,217,0.2,152,NULL,NULL,0),(227,'Sarge VII','Sarge-VII',5,NULL,80606072,264,29.767,167,1.50,228,0.1,267,NULL,NULL,0),(228,'JimReeper','JimReeper',5,NULL,109897488,229,29.767,167,2.70,101,0.2,152,NULL,NULL,0),(229,'Zero Swift','Zero-Swift',5,NULL,168887104,155,30.000,191,1.96,171,0.2,152,NULL,NULL,0),(230,'Tom The Good','Tom-The-Good',5,NULL,226177440,113,29.433,105,2.26,135,0.4,78,NULL,NULL,0),(231,'Sunlight0','Sunlight0',5,NULL,63010936,288,30.000,191,2.08,154,0.2,152,NULL,NULL,0),(232,'Graf1771','Graf1771',5,NULL,111494784,225,29.567,128,1.29,244,0.1,267,NULL,NULL,0),(233,'Shifty Summers','Shifty-Summers',5,NULL,109110240,231,29.633,139,1.26,249,0.1,267,NULL,NULL,0),(234,'I DRIVE','I-DRIVE',5,NULL,89736656,254,30.000,191,1.04,276,0.1,267,NULL,NULL,0),(235,'Mayhem','Mayhem',5,NULL,152504160,177,29.433,105,1.63,212,0.2,152,NULL,NULL,0),(236,'MrSic','MrSic',5,NULL,292821344,100,29.667,147,3.29,88,0.4,78,NULL,NULL,0),(237,'KangarooToast','KangarooToast',5,NULL,118680032,212,30.000,191,1.27,246,0.2,152,NULL,NULL,0),(238,'James2k5','James2k5',5,NULL,202979216,127,29.500,114,2.04,156,0.2,152,NULL,NULL,0),(239,'Addyboy','Addyboy',5,NULL,197804320,131,29.567,128,1.98,168,0.2,152,NULL,NULL,0),(240,'The Box Doctor','The-Box-Doctor',5,NULL,411947916,87,29.767,167,3.60,80,0.6,63,NULL,NULL,0),(241,'Phz','Phz',5,NULL,173765520,150,30.000,191,1.74,197,0.2,152,NULL,NULL,0),(242,'R lostcauz','R-lostcauz',5,NULL,174973680,149,29.133,54,2.48,115,0.3,96,NULL,NULL,0),(243,'WeeFatRab','WeeFatRab',5,NULL,120486464,210,30.000,191,1.71,202,0.2,152,NULL,NULL,0),(244,'PAPPA TAN','PAPPA-TAN',5,NULL,178153088,147,29.833,189,0.91,294,0.2,152,NULL,NULL,0),(245,'Black Blowfish','Black-Blowfish',5,NULL,162341440,164,30.000,191,0.83,307,0.2,152,NULL,NULL,0),(246,'Crawlin','Crawlin',5,NULL,297169008,98,30.000,191,2.20,139,0.2,152,NULL,NULL,0),(247,'Visa','Visa',5,NULL,156861120,169,30.000,191,1.27,246,0.1,267,NULL,NULL,0),(248,'itmario','itmario',5,NULL,200977184,128,30.000,191,1.33,241,0.2,152,NULL,NULL,0),(249,'Dark Prince6666','Dark-Prince6666',5,NULL,24293744,320,30.000,191,0.90,297,0.1,267,NULL,NULL,0),(250,'RuffNekk','RuffNekk',5,NULL,46727940,304,30.000,191,0.69,316,0.1,267,NULL,NULL,0),(251,'The G R 8 1','The-G-R-8-1',5,NULL,111535272,224,29.700,159,1.53,226,0.2,152,NULL,NULL,0),(252,'fishaman','fishaman',5,NULL,135526720,190,30.000,191,2.79,95,0.4,78,NULL,NULL,0),(253,'Imp McHumpty','Imp-McHumpty',5,NULL,83888112,258,30.000,191,1.52,227,0.1,267,NULL,NULL,0),(254,'Eckie Thump','Eckie-Thump',5,NULL,157992448,167,30.000,191,1.58,220,0.2,152,NULL,NULL,0),(255,'Ghost 543','Ghost-543',5,NULL,59265452,298,30.000,191,0.86,300,0.1,267,NULL,NULL,0),(256,'Masterchief79','Masterchief79',5,NULL,58683152,300,30.000,191,0.85,304,0.1,267,NULL,NULL,0),(257,'CoastalCrusher','CoastalCrusher',5,'<center>Formerly known as Alex Burnout and Blamelessgrub</center>',5907595424,5,6.567,4,67.98,4,8.9,4,NULL,'https://www.youtube.com/channel/UChdqPoJBbtDuxrTAL8Aa43Q',0),(258,'sparker599','sparker599',6,'The 50hz mode on the NTSC Xbox was enabled via the Enigmah Video Mode Switcher.',3722800404,18,25.600,24,42.08,22,4.8,24,'https://www.youtube.com/playlist?list=PL184353322B4B586D','https://www.youtube.com/user/sparker599',0),(259,'Stevie','Stevie',6,NULL,967910768,62,28.433,36,6.18,59,0.8,55,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWJlPoDYUCQF8PjuS0a98WPc',NULL,0),(260,'Pikman01','Pikman01',6,NULL,153478880,174,29.367,91,1.92,184,0.3,96,NULL,'https://www.youtube.com/user/Pikman01',0),(261,'X K10D X','X-K10D-X',6,NULL,264598768,103,29.700,159,2.27,133,0.2,152,NULL,NULL,0),(262,'madman450','madman450',6,NULL,235717984,108,30.000,191,2.02,158,0.2,152,NULL,NULL,0),(263,'Leopold','Leopold',6,NULL,37996280,310,29.533,120,1.41,235,0.2,152,NULL,NULL,0),(264,'Lelio','Lelio',6,NULL,113928480,218,29.433,105,2.80,94,0.3,96,NULL,NULL,0),(265,'Zegrif','Zegrif',6,NULL,654777664,73,29.233,64,4.11,74,0.5,69,NULL,NULL,0),(266,'aRtificial WooD','aRtificial-WooD',6,NULL,131108376,197,29.633,139,1.41,235,0.2,152,NULL,NULL,0),(267,'NitrousBlazer','NitrousBlazer',6,NULL,4322656724,14,21.333,15,47.92,15,5.9,15,NULL,NULL,0),(268,'Pufdady','Pufdady',6,NULL,166945792,156,30.000,191,1.67,204,0.2,152,NULL,NULL,0),(269,'Barbat','Barbat',6,NULL,90783592,253,30.000,191,1.64,209,0.2,152,NULL,NULL,0),(270,'rooty','rooty',6,NULL,190330288,141,29.300,77,1.73,199,0.3,96,NULL,NULL,0),(271,'BoneCrasherMania1','BoneCrasherMania1',7,NULL,5215392004,8,9.933,5,60.00,7,8.0,5,'http://www.youtube.com/playlist?list=PL0jsgAa9qtWK2fvXhI-Q7fFwN0eoUDRN6','https://www.youtube.com/user/BoneCrasherMania1',0),(272,'Vieraldo','Vieraldo',7,NULL,3977332526,16,25.067,21,44.88,16,5.2,18,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWK-VRqIgtV1vEazR7m7ZKA-','https://www.youtube.com/user/KarelvanD',0),(273,'MichaelJ1','MichaelJ1',7,NULL,74284864,274,30.000,191,2.29,130,0.1,267,NULL,NULL,0),(274,'Thunderduim NL','Thunderduim-NL',7,NULL,82969712,260,30.000,191,0.96,286,0.1,267,NULL,NULL,0),(275,'BerTuSo','BerTuSo',7,NULL,114380288,217,30.000,191,1.23,253,0.2,152,NULL,NULL,0),(276,'AppleHaven','AppleHaven',7,NULL,190477616,140,29.267,69,1.73,199,0.3,96,NULL,NULL,0),(277,'STi Styte','STi-Styte',7,NULL,173552240,151,29.433,105,1.58,220,0.2,152,NULL,NULL,0),(278,'Slazzy','Slazzy',8,NULL,4545709600,12,17.800,13,52.94,12,6.7,12,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWKNS0gcjkF8ImB459lou-FT','http://www.youtube.com/user/Slazzy7',0),(279,'Assassin Sports','Assassin-Sports',9,NULL,3490528546,21,27.100,28,40.61,24,4.5,25,'http://www.youtube.com/playlist?list=PL627FFDE286D319C1','https://www.youtube.com/user/Minnie2009100',0),(280,'Mark','Mark',9,NULL,197974912,130,29.467,113,2.30,127,0.3,96,NULL,'https://www.youtube.com/user/Nunkbcn',0),(281,'arcade2000','arcade2000',10,NULL,2276652952,58,29.667,147,29.78,43,2.6,43,NULL,'https://www.youtube.com/user/arcade2000',0),(282,'Sleeperwell','Sleeperwell',10,'Some PRs can be found here: <a target=\"_blank\" href=\"https://www.youtube.com/playlist?list=PL4F99A8B7BBB36923\">Xbox Live scoreboards vids</a>.',2484870720,50,29.233,64,3.44,84,0.5,69,NULL,NULL,1),(283,'Dark Avenger 13','Dark-Avenger-13',10,NULL,212508416,120,29.200,60,2.46,117,0.3,96,NULL,NULL,0),(284,'Smokey 032','Smokey-032',10,NULL,183140768,146,29.767,167,0.93,291,0.2,152,NULL,NULL,0),(285,'Krispy White','Krispy-White',10,NULL,139569920,187,30.000,191,1.13,267,0.1,267,NULL,NULL,0),(286,'OrioN Be','OrioN-Be',10,NULL,64982164,285,30.000,191,0.94,287,0.2,152,NULL,NULL,0),(287,'WWECobra','WWECobra',11,NULL,585106592,77,29.767,167,4.14,73,0.6,63,NULL,NULL,0),(288,'Montenague','Montenague',11,NULL,110130672,228,29.567,128,2.17,143,0.3,96,NULL,NULL,0),(289,'Atomik','Atomik',11,NULL,65580928,283,29.800,180,2.16,144,0.2,152,NULL,NULL,0),(290,'Gigilamesh','Gigilamesh',11,NULL,225163296,115,30.000,191,1.93,181,0.2,152,NULL,NULL,0),(291,'WAYN0996','WAYN0996',11,NULL,59423476,297,30.000,191,1.96,171,0.2,152,NULL,NULL,0),(292,'vice135','vice135',12,NULL,3122544646,29,28.367,35,35.70,33,3.7,33,NULL,NULL,0),(293,'mKrawnis','mKrawnis',13,NULL,4839982074,9,15.167,8,56.43,9,7.3,8,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWJ6iTHBRU1pO-_iRLmMWMyc','https://www.youtube.com/user/mkrawnis',0),(294,'Tim885885','Tim885885',14,'Some PRs are unknown cause his list was written after the XBL scoreboards shut-down so it wasn\'t possible to check scores outside the Top 100.',2603877456,43,29.367,91,16.69,50,1.7,49,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWJrhJjXawZGD49h2liHoW9q','https://www.youtube.com/user/TIM885885',1),(295,'80DYHUN73R','80DYHUN73R',15,NULL,211446688,121,29.767,167,1.87,190,0.3,96,NULL,'https://www.youtube.com/user/80DYHUN73R',0),(296,'gunvor','gunvor',15,NULL,384420832,90,29.633,139,2.30,127,0.4,78,NULL,NULL,0),(297,'Myke','Myke',16,NULL,480160704,81,29.100,51,3.17,90,0.3,96,NULL,NULL,0),(298,'ANTE','ANTE',17,NULL,223542000,117,29.333,80,3.88,77,0.3,96,NULL,NULL,0),(299,'Butch','Butch',17,NULL,194583712,136,30.000,191,1.28,245,0.2,152,NULL,NULL,0),(300,'Micromachine','Micromachine',18,NULL,306017888,95,29.800,180,5.02,65,0.5,69,NULL,NULL,0),(301,'Matt TM Lee','Matt-TM-Lee',2,NULL,148159984,181,30.000,191,1.49,229,0.1,267,NULL,NULL,0),(302,'AdderDee','AdderDee',5,NULL,248033664,106,29.333,80,1.33,241,0.3,96,'http://www.youtube.com/playlist?list=PL0jsgAa9qtWLzQcin9VUtvHu8KWCnJIOw','https://www.youtube.com/channel/UCw6EfmosQMDVQr4WnlbAnPA',0),(303,'Urskei','Urskei',19,NULL,133822432,192,30.000,191,1.08,270,0.1,267,'http://www.youtube.com/playlist?list=PL0jsgAa9qtWIiCiTaAoodSia1cbzjfpJZ','https://www.youtube.com/channel/UCIC6n0sl4ZUuhIg8zeSQtXQ',0),(304,'SCREAMNBY','SCREAMNBY',2,NULL,2379378216,55,30.000,191,28.64,45,2.3,44,NULL,NULL,0),(305,'AlphaKelvin','AlphaKelvin',3,NULL,77981520,270,30.000,191,0.51,320,0.0,319,NULL,NULL,0),(306,'SxyTimbyy','SxyTimbyy',19,NULL,578532928,78,30.000,191,2.81,93,0.3,96,NULL,'https://www.youtube.com/channel/UC-he9isueYKEhkuahUQZSZg',0),(307,'TzPreds Roblox','TzPreds-Roblox',2,NULL,606454808,75,30.000,191,5.83,61,0.6,63,NULL,'https://www.youtube.com/channel/UC8H7AtO2c6ljLOFJ4BpXHsA',0),(308,'AlexMProd','AlexMProd',9,NULL,908935424,63,29.333,80,6.32,58,0.7,59,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWL-m0O5PaCzlPbvJGB86Rb2','https://www.youtube.com/channel/UChqHFyS-phyB5wMzo-gu5ZQ',0),(309,'Jeremy','Jeremy',2,NULL,677094018,69,30.000,191,5.80,62,0.3,96,NULL,NULL,0),(310,'Mopsi','Mopsi',19,NULL,396365088,88,30.000,191,2.01,160,0.2,152,NULL,'https://www.youtube.com/channel/UCaRnWsocNjM0Uv3Pa0swAEw',0),(311,'SpyKid','SpyKid',4,NULL,1691367667,60,30.000,191,23.17,46,1.2,51,NULL,'https://www.youtube.com/user/Buschkling',0),(312,'LEEK701X','LEEK701X',16,NULL,5215856372,7,10.267,6,61.29,6,7.8,7,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWIK8DQp10gsqN_QzcQSrRN7','https://www.youtube.com/channel/UClMuljAoPxVIIFMRdZx0eFA',0),(313,'BO2LAU','BO2LAU',3,NULL,106478296,241,29.333,80,1.15,264,0.3,96,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWKj45FFL9GOdZMxiAsgHas3','https://www.youtube.com/channel/UC8d_XO50rmetdaWbd1hLD7w',0),(314,'Phineasfool','Phineasfool',2,NULL,35953304,311,29.633,139,0.80,308,0.1,267,NULL,NULL,0),(315,'Cliffcat','Cliffcat',5,NULL,33708916,313,30.000,191,0.75,313,0.1,267,NULL,NULL,0),(316,'Dub','Dub',11,NULL,165732412,158,30.000,191,1.87,190,0.2,152,NULL,'https://www.youtube.com/channel/UCZ5K1D4Ks5CHMyZDSqhDirg',0),(317,'MR Benga92','MR-Benga92',5,NULL,1562049452,61,29.033,46,14.78,51,1.7,49,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWK1Y6fUwTIeN---g5ZuSqPO','https://www.youtube.com/user/FuZeGaMiiNGx',0),(318,'Inko Gamer','Inko-Gamer',5,NULL,828960024,67,29.333,80,8.87,55,0.9,54,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWLdbKBQ9zXex_uqicZxost3','https://www.youtube.com/channel/UCCE0iuTkHy_-2CnK-H9Jtwg',0),(319,'kurko31','kurko31',9,NULL,27875952,316,30.000,191,0.62,319,0.0,319,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWLaa4mgQQZuAiM6lRewfHzq','https://www.youtube.com/user/kurko31',0),(320,'BudPuffer','BudPuffer',2,NULL,113817472,220,30.000,191,1.14,265,0.1,267,NULL,'https://www.youtube.com/user/rogunit',0),(321,'Howdy Doody','Howdy-Doody',2,NULL,40901204,309,29.500,114,0.91,294,0.1,267,NULL,NULL,0),(323,'TRCThrobbinhood','TRCThrobbinhood',5,NULL,34401732,312,29.800,180,0.77,310,0.1,267,NULL,NULL,0),(324,'Mr. Vette','Mr.-Vette',2,NULL,4501305852,13,16.500,10,53.51,11,6.7,12,'www.youtube.com/playlist?list=PL0jsgAa9qtWKkGjPGygsIzDrU0ReuAoGl','www.youtube.com/channel/UCnxCiSJ0uv2Idrxe6Q8DC_w',0),(325,'Joker MasterMind','Joker-MasterMind',2,NULL,782386978,68,30.000,191,9.25,54,0.7,59,'https://www.youtube.com/playlist?list=PL0jsgAa9qtWKh73MgTtus1AP4qLpXGuAG','https://www.youtube.com/channel/UCFfp5rhAovgksoFBkmN1yOg',0),(326,'Andrew','Andrew',2,NULL,591082304,76,29.500,114,2.12,149,0.3,96,NULL,NULL,0),(327,'Spyro238','Spyro238',4,NULL,0,321,30.000,191,0.00,321,0.0,319,NULL,'https://www.youtube.com/channel/UCgc2R0UHI0jHOLpkxdei7Mg',0);
+/*!40000 ALTER TABLE `players` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `records`
 --
 
+DROP TABLE IF EXISTS `records`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `records` (
-  `id` int(11) NOT NULL,
-  `score` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `score` int NOT NULL,
   `reverse` tinyint(1) DEFAULT NULL,
-  `traffic` tinyint(1) DEFAULT 0,
+  `traffic` tinyint(1) DEFAULT '0',
   `car` varchar(255) NOT NULL,
-  `player` varchar(255) NOT NULL,
   `system` enum('Gamecube/Wii','Dolphin') NOT NULL,
   `proof` varchar(255) NOT NULL,
-  `datetime_entered` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `datetime_entered` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `date_acheived` date NOT NULL,
-  `track_id` int(11) UNSIGNED NOT NULL DEFAULT 0,
+  `track_id` int unsigned NOT NULL DEFAULT '0',
   `category` enum('best_laps','total_times','big_crashes','race_crash_totals','big_airs','most_cars_in_crashes') DEFAULT NULL,
   `oob` tinyint(1) DEFAULT NULL,
-  `crashToSaveTime` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `crashToSaveTime` tinyint(1) DEFAULT NULL,
+  `player_id` int unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_track_id` (`track_id`),
+  KEY `id` (`id`),
+  KEY `playerID` (`player_id`),
+  CONSTRAINT `records_ibfk_1` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
--- --------------------------------------------------------
+--
+-- Dumping data for table `records`
+--
+
+LOCK TABLES `records` WRITE;
+/*!40000 ALTER TABLE `records` DISABLE KEYS */;
+/*!40000 ALTER TABLE `records` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tracks`
 --
 
+DROP TABLE IF EXISTS `tracks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tracks` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `name_short` varchar(10) NOT NULL,
-  `p2p` tinyint(4) NOT NULL,
-  `laps` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `p2p` tinyint NOT NULL,
+  `laps` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `tracks`
 --
 
-INSERT INTO `tracks` (`id`, `name`, `name_short`, `p2p`, `laps`) VALUES
-(1, 'Airport Terminal 3', 'at3', 0, 5),
-(2, 'Airport Terminal 1&2', 'at12', 0, 3),
-(3, 'Interstate Loop', 'iloop', 0, 3),
-(4, 'Interstate 88', 'i88', 0, 2),
-(5, 'Palm Bay Heights', 'pbh', 0, 3),
-(6, 'Palm Bay Marina', 'pbm', 0, 3),
-(7, 'Sunrise Valley Downtown', 'svd', 0, 4),
-(8, 'Sunrise Valley Springs', 'svs', 0, 3),
-(9, 'Big Surf Grove', 'bsg', 0, 4),
-(10, 'Big Surf Shores', 'bss', 0, 3),
-(11, 'Crystal Summit Peak', 'csp', 0, 5),
-(12, 'Crystal Summit Lake', 'csl', 0, 3),
-(13, 'Ocean Sprint', 'p2p1', 1, 1),
-(14, 'Heartbreak Hills', 'p2p2', 1, 1),
-(15, 'Freeway Dash', 'p2p3', 1, 1);
-
--- --------------------------------------------------------
+LOCK TABLES `tracks` WRITE;
+/*!40000 ALTER TABLE `tracks` DISABLE KEYS */;
+INSERT INTO `tracks` VALUES (1,'Airport Terminal 3','at3',0,5),(2,'Airport Terminal 1&2','at12',0,3),(3,'Interstate Loop','iloop',0,3),(4,'Interstate 88','i88',0,2),(5,'Palm Bay Heights','pbh',0,3),(6,'Palm Bay Marina','pbm',0,3),(7,'Sunrise Valley Downtown','svd',0,4),(8,'Sunrise Valley Springs','svs',0,3),(9,'Big Surf Grove','bsg',0,4),(10,'Big Surf Shores','bss',0,3),(11,'Crystal Summit Peak','csp',0,5),(12,'Crystal Summit Lake','csl',0,3),(13,'Ocean Sprint','p2p1',1,1),(14,'Heartbreak Hills','p2p2',1,1),(15,'Freeway Dash','p2p3',1,1);
+/*!40000 ALTER TABLE `tracks` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
-  `password_hash` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `password_hash` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password_hash`) VALUES
-(1, 'admin', '');
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `records`
---
-ALTER TABLE `records`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_track_id` (`track_id`),
-  ADD KEY `id` (`id`);
-
---
--- Indexes for table `tracks`
---
-ALTER TABLE `tracks`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id` (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `records`
---
-ALTER TABLE `records`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
-
---
--- AUTO_INCREMENT for table `tracks`
---
-ALTER TABLE `tracks`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-04-05 16:09:31
